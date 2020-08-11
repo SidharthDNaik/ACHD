@@ -1,9 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import GeneralButton from '../Buttons/GeneralButton'
-import styles from '../Styles/GeneralStyles'
+import GeneralButton from '../Buttons/GeneralButton';
+import styles from '../Styles/GeneralStyles';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const FirstScreen = (props) => {
+const FirstScreen = (props, { navigation }) => {
   return (
     <View style={styles.genFirstView}>
       <View style={styles.genInFirstView}>
@@ -17,16 +19,21 @@ const FirstScreen = (props) => {
           }}> ACHD </Text>
 
           <View style={{flex: 2}}>
-            <GeneralButton name="Start New Daignosis"/>
+            <GeneralButton
+              name="Start New Daignosis"
+              onPress={() => navigation.navigate('NewDaignosisScreen')}
+            />
           </View>
 
           <View style={{flex: 9}}>
-            <GeneralButton name="Choose from Daignosis list"/>
+            <GeneralButton
+              name="Choose from Daignosis list"/>
           </View>
 
       </View>
       <View style={{right: 10}}>
-        <GeneralButton name="Help"/>
+        <GeneralButton
+          name="Help"/>
       </View>
     </View>
 

@@ -11,21 +11,21 @@ Description: This file will be imported by our screens and buttons for
  var wordLength = 50;
 
 export default StyleSheet.create({
-  genFirstView: {
-    backgroundColor: "#03a5fc",
+  genHomeView: {
+    backgroundColor: "#ACCFDB",
     height: deviceHeight,
     width: deviceWidth,
-    alignItems:"flex-end",
+    alignItems:"flex-end"
   },
-  genInFirstView: {
-    backgroundColor: "#03a5fc",
-    height: deviceHeight - 100,
+  genInHomeView: {
+    backgroundColor: "#ACCFDB",
+    height: deviceHeight - 200,
     width: deviceWidth,
     alignItems:"center",
   },
   genButton: {
     height: 75,
-    width: "fit-content",
+    width: "auto",
     borderRadius: 100,
     backgroundColor: "white",
     textAlign:"center",
@@ -37,6 +37,30 @@ export default StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     color: "black"
+  },
+  modal: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
+  scrollableModal: {
+    height: 300,
+  },
+  scrollableModalContent1: {
+    height: 200,
+    backgroundColor: '#87BBE0',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  scrollableModalText1: {
+    marginRight: 10,
+    marginLeft: 10,
+    fontSize: 20,
+    color: 'white',
+  },
+  scrollableModalContent2: {
+    height: 200,
+    backgroundColor: '#A9DCD3',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
-
 });

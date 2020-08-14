@@ -1,8 +1,15 @@
+/*
+* App
+*
+* Description:
+*   Outputs our app + where we put all our screen navigation stuff.
+*
+*
+ */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import Home from './Screens/Home';
-import NewDaignosis from './Screens/NewDaignosis';
-import DaignosisList from './Screens/DaignosisList';
+import NewDiagnosis from './Screens/NewDiagnosis';
+import DiagnosisList from './Screens/DiagnosisList';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -17,12 +24,12 @@ export default function App() {
         <Stack.Screen name="Home" component={Home}
           options={{
             headerStyle: {
-              backgroundColor: 'black'
+              backgroundColor: '#312F36'
             },
-            headerTintColor: '#FFFFFF'
+            headerTintColor: 'black'
           }}/>
-        <Stack.Screen name="New Daignosis" component={NewDaignosis}/>
-        <Stack.Screen name="Daignosis List" component={DaignosisList}/>
+        <Stack.Screen name="New Diagnosis" component={NewDiagnosis}/>
+        <Stack.Screen name="Diagnosis List" component={DiagnosisList}/>
 
 
       </Stack.Navigator>

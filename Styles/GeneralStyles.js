@@ -11,32 +11,43 @@ Description: This file will be imported by our screens and buttons for
  var wordLength = 50;
 
 export default StyleSheet.create({
-  genHomeView: {
-    backgroundColor: "#ACCFDB",
+  titleText: {
+    top: 25,
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: "white",
+    flex: 2,
+  },
+  genGradient: {
     height: deviceHeight,
     width: deviceWidth,
-    alignItems:"flex-end"
+  },
+  genHomeView: {
+    backgroundColor: "rgba(0,0,0,0)",
+    height: deviceHeight,
+    width: deviceWidth,
   },
   genInHomeView: {
-    backgroundColor: "#ACCFDB",
+    backgroundColor: "rgba(0,0,0,0)",
     height: deviceHeight - 200,
     width: deviceWidth,
     alignItems:"center",
   },
   genButton: {
-    height: 75,
+    height: "auto",
     width: "auto",
     borderRadius: 100,
-    backgroundColor: "white",
+    backgroundColor: "rgba(0,0,0,0)",
     textAlign:"center",
     paddingLeft: 15,
     paddingRight: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
   },
   buttonTextStyle: {
-    top: 20,
     fontSize: 25,
     fontWeight: 'bold',
-    color: "black"
+    color: "white"
   },
   modal: {
     justifyContent: 'flex-end',
@@ -47,7 +58,7 @@ export default StyleSheet.create({
   },
   scrollableModalContent1: {
     height: 200,
-    backgroundColor: '#87BBE0',
+    backgroundColor: '#4D4A59',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -59,7 +70,7 @@ export default StyleSheet.create({
   },
   scrollableModalContent2: {
     height: 200,
-    backgroundColor: '#A9DCD3',
+    backgroundColor: '#A0AEA0',
     alignItems: 'center',
     justifyContent: 'center',
   }

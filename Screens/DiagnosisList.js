@@ -10,35 +10,35 @@
 *
 *
  */
-import React from 'react'
+import React, {useState, useEffect} from 'react';
+import {LinearGradient} from 'expo-linear-gradient';
 import { Text, View, ScrollView } from 'react-native';
 import GeneralButton from '../Components/Buttons/GeneralButton';
 import styles from '../Styles/GeneralStyles';
-import ScrollableModal from '../Components/Modals/ScrollableModal';
+import ScrollableModalView from '../Components/Modals/ScrollableModalView';
 import ButtonColumnGenerator from '../Components/Buttons/ButtonColumnGen';
+import appData from '../DataSheet/appData.json';
+import Picker from '../Components/Picker/Picker'
 
 const DaignosisList = (props) => {
 
-    var buttonNames = ["Start New Diagnosis", "Choose from Diagnosis List"];
-
-    var buttonOnpressRoutes = ["New Diagnosis", "Home"]
-
-    var buttonOnpress = []
-
-    for (let i = 0; i < buttonOnpressRoutes.length; i++){
-
-      buttonOnpress.push(() => props.navigation.navigate(buttonOnpressRoutes[i]))
-
-    }
+    var pickerItemNames = appData['DiagnosisList']['pickerItemNames']
 
    return (
-
-          <ScrollView style={styles.genHomeView}>
-             <ButtonColumnGenerator
-               names = {buttonNames}
-               onPresses = {buttonOnpress}
-               />
-          </ScrollView>
+       <LinearGradient colors={['#4D4A59', '#A0AEA0']}
+                       style={styles.genGradient}
+                       start={{ x: 0, y: 0 }}
+                       end={{ x: 1, y: 1 }}>
+        <ScrollView>
+              <View style={styles.diagnosisList1}>
+                <View style={styles.diagnosisList2}>
+                  <Picker
+                    pickerItemNames={pickerItemNames}
+                    navigation={props.navigation}/>
+                </View>
+              </View>
+        </ScrollView>
+      </LinearGradient>
     );
 }
 

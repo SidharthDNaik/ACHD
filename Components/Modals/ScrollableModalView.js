@@ -15,7 +15,7 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import styles from '../../Styles/GeneralStyles';
 
-class ScrollableModel extends Component {
+class ScrollableModalView extends Component {
   constructor(props){
     super(props);
   }
@@ -57,4 +57,4 @@ class ScrollableModel extends Component {
   }
 }
 
-export default ScrollableModel;
+export default ScrollableModalView;

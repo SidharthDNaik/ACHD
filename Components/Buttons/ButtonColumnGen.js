@@ -25,11 +25,13 @@ class ButtonColumnGenerator extends Component {
 
     var buttonList = [];
 
-    for(let i = 0; i < this.props.names.length; i++){
+    for(let i = 0; i < this.props.names.length ; i++){
       buttonList.push(
         <View key={i} style={{alignItems: 'center', marginTop: 5,
                               marginBottom: 5}}>
           <GeneralButton
+            buttonStyle={styles.genButton}
+            textStyle={styles.buttonTextStyle}
             name={this.props.names[i]}
             onPress={this.props.onPresses[i]}
           />

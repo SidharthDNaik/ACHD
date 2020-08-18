@@ -37,7 +37,7 @@ export default StyleSheet.create({
     height: "auto",
     width: "auto",
     borderRadius: 100,
-    backgroundColor: "rgba(0,0,0,0)",
+    backgroundColor: "rgba(0,0,0,.3)",
     textAlign:"center",
     paddingLeft: 15,
     paddingRight: 15,
@@ -73,5 +73,24 @@ export default StyleSheet.create({
     backgroundColor: '#A0AEA0',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
+  diagnosisList1: {
+    height: deviceHeight,
+    width: deviceWidth,
+    alignItems: "center",
+  },
+  diagnosisList2: {
+    height: deviceHeight-400,
+    width: deviceWidth,
+    alignItems: "center"
+  },
+  pickerStyle: {
+    height: 50,
+    width: deviceWidth-20,
+  },
+  diagnosisButtonTextStyle: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: "white"
+  },
 });

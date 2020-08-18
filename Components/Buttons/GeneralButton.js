@@ -26,9 +26,9 @@ class GeneralButton extends Component {
     // Generates a button with specific name and onpress.
     return (
         <TouchableOpacity
-          style={styles.genButton}
+          style={this.props.buttonStyle}
           onPress={this.props.onPress}>
-            <Text style={styles.buttonTextStyle}>{this.props.name}</Text>
+            <Text style={this.props.textStyle}>{this.props.name}</Text>
         </TouchableOpacity>
     );
   }

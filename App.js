@@ -10,6 +10,7 @@ import React from 'react';
 import Home from './Screens/Home';
 import NewDiagnosis from './Screens/NewDiagnosis';
 import DiagnosisList from './Screens/DiagnosisList';
+import Questionaire from './Screens/Questionaire'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -21,15 +22,42 @@ export default function App() {
 
       <Stack.Navigator initalRouteName="Home">
 
-        <Stack.Screen name="Home" component={Home}
+        <Stack.Screen
+          name="Home"
+          component={Home}
           options={{
             headerStyle: {
               backgroundColor: '#312F36'
             },
             headerTintColor: 'black'
           }}/>
-        <Stack.Screen name="New Diagnosis" component={NewDiagnosis}/>
-        <Stack.Screen name="Diagnosis List" component={DiagnosisList}/>
+        <Stack.Screen
+          name="New Diagnosis"
+          component={NewDiagnosis}
+          options={{
+            headerStyle: {
+              backgroundColor: '#312F36'
+            },
+          headerTintColor: 'black'
+        }}/>
+        <Stack.Screen
+          name="Diagnosis List"
+          component={DiagnosisList}
+          options={{
+            headerStyle: {
+              backgroundColor: '#312F36'
+            },
+            headerTintColor: 'black'
+          }}/>
+        <Stack.Screen
+          name="Questionaire"
+          component={Questionaire}
+          options={{
+            headerStyle: {
+              backgroundColor: '#312F36'
+            },
+            headerTintColor: 'black'
+          }}/>
 
 
       </Stack.Navigator>

@@ -1,0 +1,23 @@
+{
+  "Home": {
+    "title": "ACHD",
+
+    "modalText": ["Welcome to ACHD! * Optional short description *",
+      "Click Choose from Daignosis list to select a daignosis that applies to your patient." ,
+      "Click Start New Diagnosis if none of the listed apply to your patient. This will direct you to a screen where you can classify your patient."],
+
+    "buttonNamesCol": ["Start New Diagnosis", "Choose from Diagnosis List"],
+
+    "buttonNamesGen": ["Help", "Close"],
+
+    "buttonOnpressRoutes": ["New Diagnosis" , "Diagnosis List"],
+  },
+  "DiagnosisList": {
+    "pickerItemNames": ["TOF", "PS", "Branch PA", "DCRV",
+                           "Ebsteins", "RV to PA", "TGA_Atrial switch",
+                           "TGA_arterial switch", "cc-TGA", "Fotan",
+                           "VSD", "ASD", "AVSD", "PDA", "Congenital MS",
+                            "Subaortic stenosis", "Supravalvular AS", "CoA",
+                            "AS", "Eisenmenger"],
+  }
+}

@@ -14,22 +14,22 @@ import { Text, View, Button, ScrollView } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import GeneralButton from '../Components/Buttons/GeneralButton';
 import styles from '../Styles/GeneralStyles';
-import ScrollableModal from '../Components/Modals/ScrollableModal';
+import ScrollableModalView from '../Components/Modals/ScrollableModalView';
 import Modal from 'react-native-modal';
 import ButtonColumnGenerator from '../Components/Buttons/ButtonColumnGen';
+import appData from '../DataSheet/appData.json';
 
 const Home = (props) => {
 
-  var modalText = ["Welcome to ACHD! * Optional short description *",
-                 "Click Choose from Daignosis list to select a daignosis that"+
-                  " applies to your patient.",
-                 "Click Start New Diagnosis if none of the listed apply to"+
-                  " your patient. This will direct you to a screen where you"+
-                  " can classify your patient."];
+  var title = appData["Home"]["title"]
 
-  var buttonNames = ["Start New Diagnosis", "Choose from Diagnosis List"];
+  var modalText = appData["Home"]["modalText"];
 
-  var buttonOnpressRoutes = ["New Diagnosis", "Diagnosis List"]
+  var buttonNamesCol = appData["Home"]["buttonNamesCol"];
+
+  var buttonNamesGen = appData["Home"]["buttonNamesGen"];
+
+  var buttonOnpressRoutes = appData["Home"]["buttonOnpressRoutes"];
 
   var buttonOnpress = []
 
@@ -38,8 +38,6 @@ const Home = (props) => {
     buttonOnpress.push(() => props.navigation.navigate(buttonOnpressRoutes[i]))
 
   }
-
-  var title = "ACHD"
 
   // This is used to turn off/on the Help button modal.
   const [isModalVisible, setModalVisible] = useState(false);
@@ -56,7 +54,6 @@ const Home = (props) => {
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}>
       <ScrollView style={styles.genHomeView}>
-
         {/* The view for the main two Buttons */}
         <View style={styles.genInHomeView}>
 
@@ -66,7 +63,7 @@ const Home = (props) => {
           <View style={{flex: 9}}>
 
             <ButtonColumnGenerator
-              names = {buttonNames}
+              names = {buttonNamesCol}
               onPresses = {buttonOnpress}
               />
 
@@ -78,7 +75,9 @@ const Home = (props) => {
         <View style={{right: 10, alignItems: 'flex-end'}}>
 
           <GeneralButton
-            name="Help"
+            buttonStyle={styles.genButton}
+            textStyle={styles.buttonTextStyle}
+            name={buttonNamesGen[buttonNamesGen.length-2]}
             onPress={toggleModal}
             />
 
@@ -89,11 +88,14 @@ const Home = (props) => {
               >
               <View style={styles.scrollableModal}>
                 <ScrollView>
-                  <ScrollableModal
+                  <ScrollableModalView
                     modalText = {modalText}
                   />
                   <View style={styles.scrollableModalContent2}>
-                    <GeneralButton name="Close"
+                    <GeneralButton
+                            buttonStyle={styles.genButton}
+                            textStyle={styles.buttonTextStyle}
+                            name={buttonNamesGen[buttonNamesGen.length-1]}
                             onPress={toggleModal}/>
                   </View>
                 </ScrollView>

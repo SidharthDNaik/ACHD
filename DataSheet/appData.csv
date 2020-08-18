@@ -1,0 +1,4 @@
+,Home
+ModalText,Welcome to ACHD! * Optional short description * ; Click Choose from Daignosis list to select a daignosis that applies to your patient. ; Click Start New Diagnosis if none of the listed apply to your patient. This will direct you to a screen where you can classify your patient.
+buttonNames,Start New Diagnosis ; Choose from Diagnosis List
+buttonOnpressRoutes,New Diagnosis ; Diagnosis List

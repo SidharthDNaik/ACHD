@@ -13,22 +13,39 @@ import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import styles from '../Styles/GeneralStyles';
+import DropDownPicker from 'react-native-dropdown-picker';
+import DynamicQuestionaireCards from '../Components/Cards/DynamicQuestionaireCards'
 
-const NewDaignosis = (props) => {
+const Questionaire = (props) => {
 
   const { itemId } = props.route.params;
   const { diagnosis } = props.route.params;
 
+  var headerDisplayText = (diagnosis.match("new diagnosis")) ? "You are starting a " : "Your diagnosis: ";
+
   return (
-    <LinearGradient colors={['#4D4A59', '#A0AEA0']}
+    <LinearGradient colors={['#757171', '#faf2f2']}
                     style={styles.genGradient}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}>
-       <ScrollView>
-        <Text> {diagnosis} </Text>
+      <ScrollView>
+        <View style={styles.Questionaire1}>
+          <Text style={styles.QuestionaireHeaderText}>
+              {headerDisplayText}{diagnosis}
+          </Text>
+          <DynamicQuestionaireCards
+            name={"Anatomic Classification"}
+            classification="1"
+            />
+          <View style={{height:25}}></View>
+          <DynamicQuestionaireCards
+            name="Physiologic Classification"
+            classification="A"
+          />
+        </View>
       </ScrollView>
     </LinearGradient>
   );
 }
 
-export default NewDaignosis;
+export default Questionaire;

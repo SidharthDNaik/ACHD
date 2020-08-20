@@ -37,7 +37,7 @@ export default StyleSheet.create({
     height: "auto",
     width: "auto",
     borderRadius: 100,
-    backgroundColor: "rgba(0,0,0,.3)",
+    backgroundColor: "#757171",
     textAlign:"center",
     paddingLeft: 15,
     paddingRight: 15,
@@ -58,7 +58,7 @@ export default StyleSheet.create({
   },
   scrollableModalContent1: {
     height: 200,
-    backgroundColor: '#4D4A59',
+    backgroundColor: '#757171',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -66,11 +66,11 @@ export default StyleSheet.create({
     marginRight: 10,
     marginLeft: 10,
     fontSize: 20,
-    color: 'white',
+    color: 'black',
   },
   scrollableModalContent2: {
     height: 200,
-    backgroundColor: '#A0AEA0',
+    backgroundColor: '#faf2f2',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -80,9 +80,9 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   diagnosisList2: {
+    top: 50,
     height: deviceHeight-400,
-    width: deviceWidth,
-    alignItems: "center"
+    width: deviceWidth-20,
   },
   pickerStyle: {
     height: 50,
@@ -93,4 +93,55 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: "white"
   },
+  Questionaire1: {
+    height: deviceHeight,
+    width: deviceWidth,
+    alignItems: "center",
+    
+  },
+  Questionaire2: {
+    top: 30,
+    height: "auto",
+    width: deviceWidth-20,
+    backgroundColor: 'green'
+  },
+  QuestionaireHeaderText: {
+    fontSize: 20,
+    color: "white",
+    fontWeight: "bold",
+    top: 10,
+  },
+  dropDownCardFrame: {
+    height: "auto",
+    width: "auto",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+    backgroundColor: '#757171',
+    borderColor: 'black',
+    borderBottomWidth: 1,
+    borderTopWidth:1,
+    borderRightWidth:1,
+    borderLeftWidth:1,
+  },
+  dropDownCardFrameText : {
+    fontSize: 20,
+    color: "white",
+    fontWeight: "bold"
+  },
+  dropDownCardPanel: {
+    backgroundColor: '#faf2f2',
+    borderBottomWidth: 1,
+    borderRightWidth:1,
+    borderLeftWidth:1,
+    borderColor: 'black',
+  },
+  dropDownCardPanelText: {
+    fontSize: 15,
+    color: "black",
+    marginLeft: 10
+  },
+  icon: {
+    left: 30,
+  }
 });

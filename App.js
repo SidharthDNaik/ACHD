@@ -13,6 +13,10 @@ import DiagnosisList from './Screens/DiagnosisList';
 import Questionaire from './Screens/Questionaire'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faChevronDown, faChevronUp)
 
 const Stack = createStackNavigator();
 
@@ -20,44 +24,35 @@ export default function App() {
   return (
     <NavigationContainer>
 
-      <Stack.Navigator initalRouteName="Home">
+      <Stack.Navigator
+        initalRouteName="Home"
+        screenOptions={{
+        headerStyle: {
+          backgroundColor: '#757171',
+          borderColor: 'black'
+        },
+        headerTintColor: 'black',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
 
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{
-            headerStyle: {
-              backgroundColor: '#312F36'
-            },
-            headerTintColor: 'black'
-          }}/>
+          />
         <Stack.Screen
           name="New Diagnosis"
           component={NewDiagnosis}
-          options={{
-            headerStyle: {
-              backgroundColor: '#312F36'
-            },
-          headerTintColor: 'black'
-        }}/>
+          />
         <Stack.Screen
           name="Diagnosis List"
           component={DiagnosisList}
-          options={{
-            headerStyle: {
-              backgroundColor: '#312F36'
-            },
-            headerTintColor: 'black'
-          }}/>
+          />
         <Stack.Screen
           name="Questionaire"
           component={Questionaire}
-          options={{
-            headerStyle: {
-              backgroundColor: '#312F36'
-            },
-            headerTintColor: 'black'
-          }}/>
+          />
 
 
       </Stack.Navigator>

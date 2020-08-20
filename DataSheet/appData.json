@@ -10,7 +10,7 @@
 
     "buttonNamesGen": ["Help", "Close"],
 
-    "buttonOnpressRoutes": ["New Diagnosis" , "Diagnosis List"],
+    "buttonOnpressRoutes": ["Questionaire" , "Diagnosis List"],
   },
   "DiagnosisList": {
     "pickerItemNames": ["TOF", "PS", "Branch PA", "DCRV",

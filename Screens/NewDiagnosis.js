@@ -6,7 +6,7 @@
 *   what their patients diagnosis is before moving on.
 *
 * Parameters:
-*  
+*
 *
  */
 import React from 'react';

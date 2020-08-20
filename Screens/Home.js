@@ -33,10 +33,16 @@ const Home = (props) => {
 
   var buttonOnpress = []
 
-  for (let i = 0; i < buttonOnpressRoutes.length; i++){
+  for (let i = 0; i < buttonOnpressRoutes.length ; i++){
 
-    buttonOnpress.push(() => props.navigation.navigate(buttonOnpressRoutes[i]))
-
+    if (i == 0) {
+      buttonOnpress.push(() => props.navigation.push('Questionaire', {
+        itemId: i,
+        diagnosis: "new diagnosis"
+      }));
+    } else {
+      buttonOnpress.push(() => props.navigation.navigate(buttonOnpressRoutes[i]));
+    }
   }
 
   // This is used to turn off/on the Help button modal.
@@ -49,7 +55,7 @@ const Home = (props) => {
   // Our Screen
   return (
 
-    <LinearGradient colors={['#4D4A59', '#A0AEA0']}
+    <LinearGradient colors={['#757171', '#faf2f2']}
                     style={styles.genGradient}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}>

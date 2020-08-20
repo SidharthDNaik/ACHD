@@ -25,7 +25,7 @@ const DaignosisList = (props) => {
     var pickerItemNames = appData['DiagnosisList']['pickerItemNames']
 
    return (
-       <LinearGradient colors={['#4D4A59', '#A0AEA0']}
+       <LinearGradient colors={['#757171', '#faf2f2']}
                        style={styles.genGradient}
                        start={{ x: 0, y: 0 }}
                        end={{ x: 1, y: 1 }}>

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView} from 'react-native'
+import { View, Text, ScrollView} from 'react-native';
 import styles from '../../Styles/GeneralStyles';
-import GeneralButton from '../Buttons/GeneralButton'
+import GeneralButton from '../Buttons/GeneralButton';
 import Accordion from 'react-native-collapsible/Accordion';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import QuestionPanels from './QuestionairePanels'
+
 
 export default class DynamicQuestionaireCards extends Component {
 
@@ -37,8 +39,13 @@ export default class DynamicQuestionaireCards extends Component {
     return (
       <View style={styles.dropDownCardFrame}>
         <Text style={styles.dropDownCardFrameText}>
-          {section.name}: {section.classification}
+          {section.name}:{"  "}
         </Text>
+        <View style={styles.dropDownCardFrameText2}>
+          <Text style={styles.dropDownCardFrameText}>
+            {section.classification}
+          </Text>
+        </View>
         <View style={styles.icon}>
           <FontAwesomeIcon icon={section.arrow ? "chevron-down" : "chevron-up"}/>
         </View>
@@ -49,9 +56,7 @@ export default class DynamicQuestionaireCards extends Component {
   _renderContent = (section) => {
     section.arrow = !(section.arrow);
     return (
-      <View style={styles.dropDownCardPanel}>
-        <Text style={styles.dropDownCardPanelText}>{section.classificaton} {section.name}</Text>
-      </View>
+      <QuestionPanels/>
     );
   };
 

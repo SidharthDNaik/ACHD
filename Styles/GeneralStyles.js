@@ -97,7 +97,7 @@ export default StyleSheet.create({
     height: deviceHeight,
     width: deviceWidth,
     alignItems: "center",
-    
+
   },
   Questionaire2: {
     top: 30,
@@ -119,6 +119,8 @@ export default StyleSheet.create({
     justifyContent: "center",
     backgroundColor: '#757171',
     borderColor: 'black',
+    paddingTop: 5,
+    paddingBottom: 5,
     borderBottomWidth: 1,
     borderTopWidth:1,
     borderRightWidth:1,
@@ -128,9 +130,18 @@ export default StyleSheet.create({
     fontSize: 20,
     color: "white",
     fontWeight: "bold"
+  },dropDownCardFrameText2 : {
+    backgroundColor: "#5dba63",
+    height: "auto",
+    width: "auto",
+    paddingRight: 5,
+    paddingLeft: 5
   },
   dropDownCardPanel: {
+    flexDirection: "row",
     backgroundColor: '#faf2f2',
+    paddingTop: 5,
+    paddingBottom: 5,
     borderBottomWidth: 1,
     borderRightWidth:1,
     borderLeftWidth:1,
@@ -142,6 +153,18 @@ export default StyleSheet.create({
     marginLeft: 10
   },
   icon: {
-    left: 30,
+    left: 20,
+  },
+  QuestionPanel: {
+    height: "100%",
+    width: "65%",
+    backgroundColor: "red",
+    left: 3,
+  },
+  AnswerPanel: {
+    height: "100%",
+    width: "35%",
+    backgroundColor: "blue",
+    right: 3
   }
 });

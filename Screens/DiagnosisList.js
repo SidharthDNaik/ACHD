@@ -22,7 +22,7 @@ import Picker from '../Components/Picker/Picker'
 
 const DaignosisList = (props) => {
 
-    var pickerItemNames = appData['DiagnosisList']['pickerItemNames']
+   var pickerItemNames = appData['DiagnosisList']['pickerItemNames'];
 
    return (
        <LinearGradient colors={['#757171', '#faf2f2']}
@@ -33,8 +33,12 @@ const DaignosisList = (props) => {
               <View style={styles.diagnosisList1}>
                 <View style={styles.diagnosisList2}>
                   <Picker
+                    defaultVal= "TOF"
+                    pickerStyle = {styles.pickerStyle}
+                    showButton={true}
                     pickerItemNames={pickerItemNames}
-                    navigation={props.navigation}/>
+                    navigation={props.navigation}
+                    />
                 </View>
               </View>
         </ScrollView>

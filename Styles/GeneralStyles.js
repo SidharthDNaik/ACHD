@@ -97,13 +97,11 @@ export default StyleSheet.create({
     height: deviceHeight,
     width: deviceWidth,
     alignItems: "center",
-
   },
   Questionaire2: {
     top: 30,
     height: "auto",
-    width: deviceWidth-20,
-    backgroundColor: 'green'
+    width: deviceWidth,
   },
   QuestionaireHeaderText: {
     fontSize: 20,
@@ -113,7 +111,7 @@ export default StyleSheet.create({
   },
   dropDownCardFrame: {
     height: "auto",
-    width: "auto",
+    width: deviceWidth,
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "center",
@@ -123,8 +121,6 @@ export default StyleSheet.create({
     paddingBottom: 5,
     borderBottomWidth: 1,
     borderTopWidth:1,
-    borderRightWidth:1,
-    borderLeftWidth:1,
   },
   dropDownCardFrameText : {
     fontSize: 20,
@@ -138,13 +134,12 @@ export default StyleSheet.create({
     paddingLeft: 5
   },
   dropDownCardPanel: {
+    height: 200,
     flexDirection: "row",
     backgroundColor: '#faf2f2',
     paddingTop: 5,
     paddingBottom: 5,
     borderBottomWidth: 1,
-    borderRightWidth:1,
-    borderLeftWidth:1,
     borderColor: 'black',
   },
   dropDownCardPanelText: {
@@ -157,14 +152,20 @@ export default StyleSheet.create({
   },
   QuestionPanel: {
     height: "100%",
-    width: "65%",
-    backgroundColor: "red",
+    width: "60%",
+    borderRightWidth: 1,
+    borderColor: 'black',
     left: 3,
+    marginRight: 5,
+    alignItems: "center",
+    justifyContent:'center'
+  },
+  QuestionText: {
+    fontSize: 20,
   },
   AnswerPanel: {
     height: "100%",
-    width: "35%",
-    backgroundColor: "blue",
+    width: "40%",
     right: 3
   }
 });

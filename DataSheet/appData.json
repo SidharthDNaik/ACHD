@@ -19,5 +19,21 @@
                            "VSD", "ASD", "AVSD", "PDA", "Congenital MS",
                             "Subaortic stenosis", "Supravalvular AS", "CoA",
                             "AS", "Eisenmenger"],
+  },
+  "Questionaire": {
+    "Anatomic": {
+      "Questions": ["Select dominant final diagnosis"],
+      "pickerDefaultValues": ["Small ASD"],
+      "pickerItemNames": [["Small ASD", "Small VSD", "Mild pulmanory stenosis",
+                           "Repaired ASD no shunt or chamber enlargement",
+                           "Repaired VSD no shunt or chamber enlargement", "Ligated or occulded PDA"]],
+    },
+    "Physiologic": {
+      "Questions": ["Oxygen Saturation", "NYHA classification",
+                    "Aortopathy - aortic dilation"],
+      "pickerDefaultValues": [">90%", "1", "None"],
+      "pickerItemNames": [[">90%", "<= 90%", "< 85%"],["1","2","3","4"],
+                          ["None","3.5 - 3.9 cm", "4.0 - 4.9 cm", ">5.0 cm"]],
+    },
   }
 }

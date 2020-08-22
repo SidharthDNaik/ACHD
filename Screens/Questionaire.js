@@ -14,7 +14,8 @@ import { Text, View, ScrollView } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import styles from '../Styles/GeneralStyles';
 import DropDownPicker from 'react-native-dropdown-picker';
-import DynamicQuestionaireCards from '../Components/Cards/DynamicQuestionaireCards'
+import DynamicQuestionaireCards from '../Components/Cards/DynamicQuestionaireCards';
+import appData from '../DataSheet/appData.json';
 
 const Questionaire = (props) => {
 
@@ -28,7 +29,6 @@ const Questionaire = (props) => {
                     style={styles.genGradient}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}>
-      <ScrollView>
         <View style={styles.Questionaire1}>
           <Text style={styles.QuestionaireHeaderText}>
               {headerDisplayText}{diagnosis}
@@ -36,14 +36,19 @@ const Questionaire = (props) => {
           <DynamicQuestionaireCards
             name={"Anatomic Classification"}
             classification="1"
+            Questions= {appData["Questionaire"]["Anatomic"]["Questions"]}
+            pickerDefaultValues= {appData["Questionaire"]["Anatomic"]["pickerDefaultValues"]}
+            pickerItemNames= {appData["Questionaire"]["Anatomic"]["pickerItemNames"]}
             />
           <View style={{height:25}}></View>
           <DynamicQuestionaireCards
             name="Physiologic Classification"
             classification="A"
+            Questions= {appData["Questionaire"]["Physiologic"]["Questions"]}
+            pickerDefaultValues= {appData["Questionaire"]["Physiologic"]["pickerDefaultValues"]}
+            pickerItemNames= {appData["Questionaire"]["Physiologic"]["pickerItemNames"]}
           />
         </View>
-      </ScrollView>
     </LinearGradient>
   );
 }

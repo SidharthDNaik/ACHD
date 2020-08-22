@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView} from 'react-native';
+import { View, Text, ScrollView, SafeAreaView} from 'react-native';
 import styles from '../../Styles/GeneralStyles';
 import GeneralButton from '../Buttons/GeneralButton';
 import Accordion from 'react-native-collapsible/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import QuestionPanels from './QuestionairePanels'
-
+import Constants from 'expo-constants';
 
 export default class DynamicQuestionaireCards extends Component {
 
@@ -19,7 +19,10 @@ export default class DynamicQuestionaireCards extends Component {
         {
           name: props.name,
           classification: props.classification,
-          arrow: true
+          arrow: true,
+          Questions: props.Questions,
+          pickerDefaultValues: props.pickerDefaultValues,
+          pickerItemNames: props.pickerItemNames,
         },
       ],
 
@@ -56,7 +59,13 @@ export default class DynamicQuestionaireCards extends Component {
   _renderContent = (section) => {
     section.arrow = !(section.arrow);
     return (
-      <QuestionPanels/>
+      <ScrollView>
+        <QuestionPanels
+          Questions={section.Questions}
+          pickerDefaultValues={section.pickerDefaultValues}
+          pickerItemNames={section.pickerItemNames}
+        />
+      </ScrollView>
     );
   };
 

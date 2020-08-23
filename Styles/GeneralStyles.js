@@ -245,5 +245,6 @@ export default StyleSheet.create({
   },
   answerButtonText: {
     fontSize: 20,
+    marginLeft: 5,
   }
 });

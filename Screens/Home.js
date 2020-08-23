@@ -94,16 +94,21 @@ const Home = (props) => {
               >
               <View style={styles.scrollableModal}>
                 <ScrollView>
-                  <ScrollableModalView
-                    modalText = {modalText}
-                  />
-                  <View style={styles.scrollableModalContent2}>
+                  <View style={styles.closeButton}>
                     <GeneralButton
-                            buttonStyle={styles.genButton}
-                            textStyle={styles.buttonTextStyle}
+                            buttonStyle={styles.closeButtonStyle}
+                            textStyle={styles.closeButtonText}
                             name={buttonNamesGen[buttonNamesGen.length-1]}
                             onPress={toggleModal}/>
                   </View>
+                  <View style={styles.modalHeader}>
+                    <Text style={styles.modalText}>
+                      Welcome to ACHD!
+                    </Text>
+                  </View>
+                  <ScrollableModalView
+                    modalText = {modalText}
+                  />
                 </ScrollView>
               </View>
             </Modal>

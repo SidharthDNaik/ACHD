@@ -2,7 +2,8 @@
   "Home": {
     "title": "ACHD",
 
-    "modalText": ["Welcome to ACHD! * Optional short description *",
+    "modalText": [
+                  "This is an app we developed to help doctors classify patients with congentital heart disease.",
       "Click Choose from Daignosis list to select a daignosis that applies to your patient." ,
       "Click Start New Diagnosis if none of the listed apply to your patient. This will direct you to a screen where you can classify your patient."],
 
@@ -22,18 +23,32 @@
   },
   "Questionaire": {
     "Anatomic": {
-      "Questions": ["Select dominant final diagnosis"],
-      "pickerDefaultValues": ["Small ASD"],
+      "Questions": ["Simple", "Greatly Complex or Complex"],
       "pickerItemNames": [["Small ASD", "Small VSD", "Mild pulmanory stenosis",
                            "Repaired ASD no shunt or chamber enlargement",
-                           "Repaired VSD no shunt or chamber enlargement", "Ligated or occulded PDA"]],
+                           "Repaired VSD no shunt or chamber enlargement", "Ligated or occulded PDA"],
+                          ["All single ventricle patient irrespective of palliation", "Cyanotic heart disease unrepaired or palliated",
+                            "All Fontan patients", "DORV", "IAA", "TGA - D-TGA or cc_TGA", "Truncus", "Heterotaxy/Crisscross"]],
     },
     "Physiologic": {
       "Questions": ["Oxygen Saturation", "NYHA classification",
-                    "Aortopathy - aortic dilation"],
-      "pickerDefaultValues": [">90%", "1", "None"],
+                    "Aortopathy - aortic dilation", "Arrhythmia",
+                    "Ventricular dysfunction and/or enlargement",
+                    "Concomitant Valvular Disease (2014 guidelines)",
+                    "Vascular stenosis (CoA, PA, Pul vein, baffle, Fontan, conduit)",
+                    "Pulmonary Hypertension", "Shunt", "Excercise testing",
+                    "End-organ dysfunction-flinical or lab (hepatic, pulmonary, renal)"],
       "pickerItemNames": [[">90%", "<= 90%", "< 85%"],["1","2","3","4"],
-                          ["None","3.5 - 3.9 cm", "4.0 - 4.9 cm", ">5.0 cm"]],
+                          ["None","3.5 - 3.9 cm", "4.0 - 4.9 cm", ">5.0 cm"],
+                          ["None", "No treatment required", "Well controlled on meds, cardioversion, PM, ICD", "Refractory to treatment"],
+                          ["None", "Mild", "Moderate", "Severe"],
+                          ["C", "Mild", "Moderate", "Severe"],
+                          ["None","Present"],
+                          ["Normal", "Moderate", "Severe", "mPAP >= 25, PCWP <= 15, PVR >3 Wood Units"],
+                          ["None/trivial", "Chamber enlargement or Qp/Qs >= 1.5"],
+                          ["Normal", "Objective abnormality"],
+                          ["None", "Present, Responsive to therapy", "Present, refractory to therapy"],
+                        ],
     },
   }
 }

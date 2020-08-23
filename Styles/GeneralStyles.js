@@ -49,6 +49,39 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: "white"
   },
+  closeButton :{
+    height: "auto",
+    width: "auto",
+    alignItems: "flex-end",
+    paddingRight: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+    backgroundColor: "#faf2f2"
+  },
+  closeButtonText :{
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "white"
+  },
+  closeButtonStyle :{
+    height: "auto",
+    width: "auto",
+    backgroundColor: "#757171",
+    paddingRight: 10,
+    paddingLeft: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+  },
+  modalHeader :{
+    height: "auto",
+    width: "auto",
+    backgroundColor: '#757171',
+    paddingRight: 10,
+    paddingLeft: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    alignItems: "center"
+  },
   modal: {
     justifyContent: 'flex-end',
     margin: 0,
@@ -57,22 +90,24 @@ export default StyleSheet.create({
     height: 300,
   },
   scrollableModalContent1: {
-    height: 200,
-    backgroundColor: '#757171',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: "auto",
+    width: "auto",
+    backgroundColor: '#faf2f2',
+    paddingLeft: 10,
+    paddingTop: 20,
+    paddingBottom: 20,
   },
-  scrollableModalText1: {
-    marginRight: 10,
-    marginLeft: 10,
+  modalText: {
     fontSize: 20,
     color: 'black',
   },
   scrollableModalContent2: {
-    height: 200,
-    backgroundColor: '#faf2f2',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: "auto",
+    width: "auto",
+    backgroundColor: '#757171',
+    paddingLeft: 10,
+    paddingTop: 20,
+    paddingBottom: 20,
   },
   diagnosisList1: {
     height: deviceHeight,
@@ -142,6 +177,21 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: 'black',
   },
+  dropDownCardPanelHeader: {
+    height: "auto",
+    width: "auto",
+    alignItems: "center",
+    backgroundColor: "#a6a6a6",
+    paddingTop: 5,
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderColor: 'black',
+  },
+  dropDownCardPanelHeaderText: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "white"
+  },
   dropDownCardPanelText: {
     fontSize: 15,
     color: "black",
@@ -166,6 +216,34 @@ export default StyleSheet.create({
   AnswerPanel: {
     height: "100%",
     width: "40%",
-    right: 3
+    right: 3,
+    alignItems: "center",
+    justifyContent:'center',
+    flexDirection: "row",
+  },
+  answerButtonNotChosen: {
+    flex: 1,
+    alignItems: "center",
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderColor: "black",
+    backgroundColor: "#bf8a86",
+  },
+  answerButtonChosen: {
+    flex: 1,
+    alignItems: "center",
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderColor: "black",
+    backgroundColor: "#8cbf86",
+  },
+  pickerAnswerModal: {
+    height: 300,
+    backgroundColor: '#faf2f2',
+  },
+  answerButtonText: {
+    fontSize: 20,
   }
 });

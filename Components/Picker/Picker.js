@@ -9,7 +9,7 @@ export default class PickerMod extends Component {
   constructor(props)  {
     super(props);
     this.state = {
-      diagnosis: props.defaultVal,
+      value: props.defaultVal,
     };
   }
 
@@ -26,7 +26,7 @@ export default class PickerMod extends Component {
                 name={buttonName}
                 onPress={() => this.props.navigation.push('Questionaire', {
                   itemId: 10,
-                  diagnosis: this.state.diagnosis
+                  diagnosis: this.state.value
                 })}/>
               </View>
             );
@@ -37,7 +37,7 @@ export default class PickerMod extends Component {
 
     var pickerItemNames = this.props.pickerItemNames;
 
-    var buttonName = "Choose " + this.state.diagnosis;
+    var buttonName = "Choose " + this.state.value;
 
     var pickerItemList = [];
 
@@ -50,11 +50,11 @@ export default class PickerMod extends Component {
     return(
       <View>
         <Picker
-          selectedValue={this.state.diagnosis}
+          selectedValue={this.state.value}
           style={this.props.pickerStyle}
-          onValueChange={(itemValue, itemIndex) =>
-            this.setState({diagnosis: itemValue})
-          }>
+          onValueChange={(itemValue) =>
+            this.setState({value: itemValue})}
+          >
           {pickerItemList}
         </Picker>
         {showButton()}

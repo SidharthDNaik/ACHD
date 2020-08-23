@@ -10,7 +10,7 @@
 *
 *
  */
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, setState, Component} from 'react';
 import {LinearGradient} from 'expo-linear-gradient';
 import { Text, View, ScrollView } from 'react-native';
 import GeneralButton from '../Components/Buttons/GeneralButton';
@@ -20,7 +20,17 @@ import ButtonColumnGenerator from '../Components/Buttons/ButtonColumnGen';
 import appData from '../DataSheet/appData.json';
 import Picker from '../Components/Picker/Picker'
 
-const DaignosisList = (props) => {
+
+export default class DiagnosisList extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+
+    }
+  }
+
+  render(){
 
    var pickerItemNames = appData['DiagnosisList']['pickerItemNames'];
 
@@ -37,13 +47,12 @@ const DaignosisList = (props) => {
                     pickerStyle = {styles.pickerStyle}
                     showButton={true}
                     pickerItemNames={pickerItemNames}
-                    navigation={props.navigation}
+                    navigation={this.props.navigation}
                     />
                 </View>
               </View>
         </ScrollView>
       </LinearGradient>
     );
+  }
 }
-
-export default DaignosisList

@@ -21,7 +21,6 @@ export default class DynamicQuestionaireCards extends Component {
           classification: props.classification,
           arrow: true,
           Questions: props.Questions,
-          pickerDefaultValues: props.pickerDefaultValues,
           pickerItemNames: props.pickerItemNames,
         },
       ],
@@ -42,7 +41,7 @@ export default class DynamicQuestionaireCards extends Component {
     return (
       <View style={styles.dropDownCardFrame}>
         <Text style={styles.dropDownCardFrameText}>
-          {section.name}:{"  "}
+          {section.name} Classification:{"  "}
         </Text>
         <View style={styles.dropDownCardFrameText2}>
           <Text style={styles.dropDownCardFrameText}>
@@ -58,14 +57,22 @@ export default class DynamicQuestionaireCards extends Component {
 
   _renderContent = (section) => {
     section.arrow = !(section.arrow);
+    var scrollHeight = (section.Questions.length > 2) ? 600 : 400;
+    var headerDisplay = (section.name.localeCompare("Physiologic")) ? section.name + " Variables" : "Select Dominant Final Diagnosis";
     return (
-      <ScrollView>
-        <QuestionPanels
-          Questions={section.Questions}
-          pickerDefaultValues={section.pickerDefaultValues}
-          pickerItemNames={section.pickerItemNames}
-        />
-      </ScrollView>
+      <View style={{height: scrollHeight}}>
+        <ScrollView>
+          <View style={styles.dropDownCardPanelHeader}>
+            <Text style={styles.dropDownCardPanelHeaderText}>
+              {headerDisplay}
+            </Text>
+          </View>
+          <QuestionPanels
+            Questions={section.Questions}
+            pickerItemNames={section.pickerItemNames}
+          />
+        </ScrollView>
+      </View>
     );
   };
 

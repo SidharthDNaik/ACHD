@@ -32,7 +32,7 @@ class ScrollableModalView extends Component {
       if (i % 2 == 0){
         modalOutput.push(
           <View key={i} style={styles.scrollableModalContent1}>
-            <Text style={styles.scrollableModalText1}>
+            <Text style={styles.modalText}>
               {this.props.modalText[i]}
             </Text>
           </View>
@@ -40,7 +40,7 @@ class ScrollableModalView extends Component {
       } else {
         modalOutput.push(
           <View key={i} style={styles.scrollableModalContent2}>
-            <Text style={styles.scrollableModalText1}>
+            <Text style={styles.modalText}>
               {this.props.modalText[i]}
             </Text>
           </View>

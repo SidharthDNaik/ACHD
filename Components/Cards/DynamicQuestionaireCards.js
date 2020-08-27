@@ -6,6 +6,7 @@ import Accordion from 'react-native-collapsible/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import QuestionPanels from './QuestionairePanels'
 import Constants from 'expo-constants';
+import appData from '../../DataSheet/appData';
 
 export default class DynamicQuestionaireCards extends Component {
 
@@ -22,6 +23,7 @@ export default class DynamicQuestionaireCards extends Component {
           arrow: true,
           Questions: props.Questions,
           pickerItemNames: props.pickerItemNames,
+          type: props.type,
         },
       ],
 
@@ -38,12 +40,13 @@ export default class DynamicQuestionaireCards extends Component {
   };
 
   _renderHeader = (section) => {
+    var classStyle = (String(section.classification).localeCompare("0") && String(section.classification).localeCompare("N")) ? styles.dropDownCardFrameText2: styles.dropDownCardFrameText1;
     return (
       <View style={styles.dropDownCardFrame}>
         <Text style={styles.dropDownCardFrameText}>
           {section.name} Classification:{"  "}
         </Text>
-        <View style={styles.dropDownCardFrameText2}>
+        <View style={classStyle}>
           <Text style={styles.dropDownCardFrameText}>
             {section.classification}
           </Text>
@@ -57,21 +60,43 @@ export default class DynamicQuestionaireCards extends Component {
 
   _renderContent = (section) => {
     section.arrow = !(section.arrow);
-    var scrollHeight = (section.Questions.length > 2) ? 600 : 400;
+    var height = (section.name.localeCompare("Physiologic")) ? styles.properHeight1 : styles.properHeight2;
     var headerDisplay = (section.name.localeCompare("Physiologic")) ? section.name + " Variables" : "Select Dominant Final Diagnosis";
-    return (
-      <View style={{height: scrollHeight}}>
-        <ScrollView>
+    var display = []
+    if (section.type.localeCompare("new diagnosis")) {
+      display.push(
+        <View>
+          <View style={styles.dropDownCardPanelHeader}>
+            <Text style={styles.dropDownCardPanelHeaderText}>
+              Explaination
+            </Text>
+          </View>
+          <View style={styles.dropDownCardPanel2}>
+            <Text style={styles.explainationText}>{appData["Questionaire"]["ExplainationForDiagnosisListQuestionaire"]}</Text>
+          </View>
+        </View>);
+    } else {
+      display.push(
+        <View>
           <View style={styles.dropDownCardPanelHeader}>
             <Text style={styles.dropDownCardPanelHeaderText}>
               {headerDisplay}
             </Text>
           </View>
-          <QuestionPanels
-            Questions={section.Questions}
-            pickerItemNames={section.pickerItemNames}
-          />
-        </ScrollView>
+          <View style={height}>
+              <ScrollView>
+                <QuestionPanels
+                  Questions={section.Questions}
+                  pickerItemNames={section.pickerItemNames}
+                />
+            </ScrollView>
+          </View>
+        </View>
+      );
+    }
+    return (
+      <View>
+          {display}
       </View>
     );
   };

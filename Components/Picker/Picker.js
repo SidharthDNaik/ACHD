@@ -41,10 +41,12 @@ export default class PickerMod extends Component {
 
     var pickerItemList = [];
 
-    for(let i = 0; i < pickerItemNames.length ; i++){
+    var j = 0;
+    for(var i in pickerItemNames){
       pickerItemList.push(
-        <Picker.Item key={i} label={pickerItemNames[i]} value={pickerItemNames[i]}/>
+        <Picker.Item key={j} label={i} value={i}/>
       );
+      j+=1;
     }
 
     return(

@@ -97,7 +97,6 @@ export default class QuestionairePanels extends Component {
     return(
       <View>
         {panelList}
-        <View style={{height: 45}}></View>
       </View>
     );
   }

@@ -14,12 +14,12 @@
     "buttonOnpressRoutes": ["Questionaire" , "Diagnosis List"],
   },
   "DiagnosisList": {
-    "pickerItemNames": ["TOF", "PS", "Branch PA", "DCRV",
-                           "Ebsteins", "RV to PA", "TGA_Atrial switch",
-                           "TGA_arterial switch", "cc-TGA", "Fotan",
-                           "VSD", "ASD", "AVSD", "PDA", "Congenital MS",
-                            "Subaortic stenosis", "Supravalvular AS", "CoA",
-                            "AS", "Eisenmenger"],
+    "pickerItemNames": {"TOF":2, "PS":2, "Branch PA":2, "DCRV":2,
+                           "Ebsteins":2, "RV to PA":2, "TGA_Atrial switch":3,
+                           "TGA_arterial switch":3, "cc-TGA":3, "Fotan":3,
+                           "VSD":2, "ASD":2, "AVSD":2, "PDA":2, "Congenital MS":2,
+                            "Subaortic stenosis":2, "Supravalvular AS":2, "CoA":2,
+                            "AS":2, "Eisenmenger":3},
   },
   "Questionaire": {
     "Anatomic": {
@@ -50,5 +50,6 @@
                           ["None", "Present, Responsive to therapy", "Present, refractory to therapy"],
                         ],
     },
+    "ExplainationForDiagnosisListQuestionaire": "The reason Anatomic Classifcation is hardcoded is because you selected a diagnosis from the list. Each diagnosis has its own Anatomic Classification value.",
   }
 }

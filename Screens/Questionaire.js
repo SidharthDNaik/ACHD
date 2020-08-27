@@ -22,7 +22,8 @@ const Questionaire = (props) => {
   const { itemId } = props.route.params;
   const { diagnosis } = props.route.params;
 
-  var headerDisplayText = (diagnosis.localeCompare("new diagnosis")) ? "Your diagnosis: " : "You are starting a ";
+  var headerDisplayText = (diagnosis.localeCompare("new diagnosis")) ? "Selected diagnosis: " : "You are starting a ";
+  var classification = (diagnosis.localeCompare("new diagnosis")) ? appData["DiagnosisList"]["pickerItemNames"][diagnosis] : "0";
 
   return (
     <LinearGradient colors={['#757171', '#faf2f2']}
@@ -35,14 +36,16 @@ const Questionaire = (props) => {
           </Text>
           <DynamicQuestionaireCards
             name={"Anatomic"}
-            classification="1"
+            type={diagnosis}
+            classification={classification}
             Questions= {appData["Questionaire"]["Anatomic"]["Questions"]}
             pickerItemNames= {appData["Questionaire"]["Anatomic"]["pickerItemNames"]}
             />
           <View style={{height:25}}></View>
           <DynamicQuestionaireCards
             name="Physiologic"
-            classification="A"
+            type={"new diagnosis"}
+            classification="N"
             Questions= {appData["Questionaire"]["Physiologic"]["Questions"]}
             pickerItemNames= {appData["Questionaire"]["Physiologic"]["pickerItemNames"]}
           />

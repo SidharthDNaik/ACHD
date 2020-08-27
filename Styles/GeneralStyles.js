@@ -129,9 +129,10 @@ export default StyleSheet.create({
     color: "white"
   },
   Questionaire1: {
-    height: deviceHeight,
+    height: deviceHeight-110,
     width: deviceWidth,
     alignItems: "center",
+    flexDirection: "column",
   },
   Questionaire2: {
     top: 30,
@@ -161,12 +162,27 @@ export default StyleSheet.create({
     fontSize: 20,
     color: "white",
     fontWeight: "bold"
-  },dropDownCardFrameText2 : {
-    backgroundColor: "#5dba63",
+  },dropDownCardFrameText1 : {
+    backgroundColor: "#bf8a86",
     height: "auto",
     width: "auto",
     paddingRight: 5,
-    paddingLeft: 5
+    paddingLeft: 5,
+    borderBottomWidth: 1,
+    borderTopWidth:1,
+    borderRightWidth:1,
+    borderLeftWidth: 1,
+  },
+  dropDownCardFrameText2 : {
+    backgroundColor: "#8cbf86",
+    height: "auto",
+    width: "auto",
+    paddingRight: 5,
+    paddingLeft: 5,
+    borderBottomWidth: 1,
+    borderTopWidth:1,
+    borderRightWidth:1,
+    borderLeftWidth: 1,
   },
   dropDownCardPanel: {
     height: 200,
@@ -176,6 +192,21 @@ export default StyleSheet.create({
     paddingBottom: 5,
     borderBottomWidth: 1,
     borderColor: 'black',
+  },
+  dropDownCardPanel2: {
+    height: "auto",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: '#faf2f2',
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderColor: 'black',
+  },
+  explainationText: {
+    fontSize: 20,
+    marginLeft: 10,
+    marginRight: 10,
   },
   dropDownCardPanelHeader: {
     height: "auto",
@@ -196,6 +227,12 @@ export default StyleSheet.create({
     fontSize: 15,
     color: "black",
     marginLeft: 10
+  },
+  properHeight1: {
+    height: 400,
+  },
+  properHeight2: {
+    height: 520,
   },
   icon: {
     left: 20,

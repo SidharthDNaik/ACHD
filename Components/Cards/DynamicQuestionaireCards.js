@@ -12,15 +12,26 @@ export default class DynamicQuestionaireCards extends Component {
 
   constructor(props)  {
     super(props);
+
+    var x = []
+
+    for (var i = 0; i < props.Questions.length; i++) {
+      x.push(0);
+    }
+
     this.state = {
 
       isCollapsed: true,
 
+      decisionTree: x,
+
+      classification: props.classification,
+
+      arrow: true,
+
       Sections : [
         {
           name: props.name,
-          classification: props.classification,
-          arrow: true,
           Questions: props.Questions,
           pickerItemNames: props.pickerItemNames,
           type: props.type,
@@ -40,7 +51,7 @@ export default class DynamicQuestionaireCards extends Component {
   };
 
   _renderHeader = (section) => {
-    var classStyle = (String(section.classification).localeCompare("0") && String(section.classification).localeCompare("N")) ? styles.dropDownCardFrameText2: styles.dropDownCardFrameText1;
+    var classStyle = (String(this.state.classification).localeCompare("0") && String(this.state.classification).localeCompare("N")) ? styles.dropDownCardFrameText2: styles.dropDownCardFrameText1;
     return (
       <View style={styles.dropDownCardFrame}>
         <Text style={styles.dropDownCardFrameText}>
@@ -48,24 +59,24 @@ export default class DynamicQuestionaireCards extends Component {
         </Text>
         <View style={classStyle}>
           <Text style={styles.dropDownCardFrameText}>
-            {section.classification}
+            {this.state.classification}
           </Text>
         </View>
         <View style={styles.icon}>
-          <FontAwesomeIcon icon={section.arrow ? "chevron-down" : "chevron-up"}/>
+          <FontAwesomeIcon icon={this.state.arrow ? "chevron-down" : "chevron-up"}/>
         </View>
       </View>
     );
   };
 
   _renderContent = (section) => {
-    section.arrow = !(section.arrow);
+    this.state.arrow = !(this.state.arrow);
     var height = (section.name.localeCompare("Physiologic")) ? styles.properHeight1 : styles.properHeight2;
     var headerDisplay = (section.name.localeCompare("Physiologic")) ? section.name + " Variables" : "Select Dominant Final Diagnosis";
     var display = []
     if (section.type.localeCompare("new diagnosis")) {
       display.push(
-        <View>
+        <View key={0}>
           <View style={styles.dropDownCardPanelHeader}>
             <Text style={styles.dropDownCardPanelHeaderText}>
               Explaination
@@ -77,7 +88,7 @@ export default class DynamicQuestionaireCards extends Component {
         </View>);
     } else {
       display.push(
-        <View>
+        <View key={1}>
           <View style={styles.dropDownCardPanelHeader}>
             <Text style={styles.dropDownCardPanelHeaderText}>
               {headerDisplay}
@@ -86,8 +97,37 @@ export default class DynamicQuestionaireCards extends Component {
           <View style={height}>
               <ScrollView>
                 <QuestionPanels
+                  name={section.name}
                   Questions={section.Questions}
                   pickerItemNames={section.pickerItemNames}
+                  classification={this.state.classification}
+                  parentCallback={(newClassification, position) => {
+                      var classChange = this.state.decisionTree;
+                      classChange[position] = newClassification
+                      this.setState({decisionTree: classChange})
+                      var max = 0
+                      for (var i = 0; i < this.state.decisionTree.length; i++){
+                        if (max < this.state.decisionTree[i]){
+                          max = this.state.decisionTree[i]
+                        }
+                      }
+                      if (section.name.localeCompare("Anatomic")){
+                        if(max == 0){
+                          max = "N"
+                        } else if (max == 1){
+                          max = "A"
+                        } else if (max == 2){
+                          max = "B"
+                        } else if (max == 3){
+                          max = "C"
+                        } else if (max == 4){
+                          max = "D"
+                        }
+                      }
+                      this.setState({classification: max})
+                      this.setState({arrow:!(this.state.arrow)})
+                    }
+                  }
                 />
             </ScrollView>
           </View>

@@ -23,14 +23,13 @@ const Panel = (props) => {
 
   var pickerItemList = [];
 
-  pickerItemList.push(
-    <Picker.Item key={0} label={"Not Selected"} value={"Not Selected"}/>
-  );
+  var j = 0;
 
-  for(let i = 0; i < props.pickerItemNames.length ; i++){
+  for(var i in props.pickerItemNames){
     pickerItemList.push(
-      <Picker.Item key={i+1} label={props.pickerItemNames[i]} value={props.pickerItemNames[i]}/>
+      <Picker.Item key={j} label={i} value={i}/>
     );
+    j+=1;
   }
 
   return (
@@ -65,7 +64,8 @@ const Panel = (props) => {
           <Picker
             selectedValue={answerName}
             onValueChange={(itemValue) => {
-              changeAnswer(itemValue)
+              changeAnswer(itemValue);
+              props.parentCallback(appData["Questionaire"][props.name]["pickerItemNames"][props.position][itemValue], props.position);
             }}
             >
           {pickerItemList}
@@ -78,19 +78,35 @@ const Panel = (props) => {
 
 export default class QuestionairePanels extends Component {
   constructor(props){
-    super(props)
+
+    super(props);
+
+    this.state = {
+      name: props.name,
+    }
+
   }
+
   render() {
 
     var panelList = [];
 
-    for(let i = 0; i < this.props.Questions.length; i++){
+    for(var i = 0; i < this.props.Questions.length; i++){
       panelList.push(
-        <Panel
-               key={i}
-               Question={this.props.Questions[i]}
-               pickerItemNames = {this.props.pickerItemNames[i]}
-        />
+        <View key={i}>
+          {console.log(i)}
+          <Panel
+                 key={i}
+                 position={i}
+                 name={this.state.name}
+                 Question={this.props.Questions[i]}
+                 pickerItemNames = {this.props.pickerItemNames[i]}
+                 parentCallback = {
+                   (newClassification, position) => {
+                   this.props.parentCallback(newClassification, position);
+                 }}
+          />
+      </View>
       );
     }
 

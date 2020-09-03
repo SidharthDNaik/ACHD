@@ -59,7 +59,7 @@ export default StyleSheet.create({
     backgroundColor: "#faf2f2"
   },
   closeButtonText :{
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: "bold",
     color: "white"
   },
@@ -129,7 +129,7 @@ export default StyleSheet.create({
     color: "white"
   },
   Questionaire1: {
-    height: deviceHeight-110,
+    height: deviceHeight,
     width: deviceWidth,
     alignItems: "center",
     flexDirection: "column",
@@ -138,7 +138,17 @@ export default StyleSheet.create({
     top: 30,
     height: "auto",
     width: deviceWidth,
+    paddingBottom: 20,
   },
+  Questionaire3: {
+    paddingTop: 10,
+    alignItems: "center"
+  },
+  Questionaire4: {
+    paddingTop: 40,
+    alignItems: "center"
+  },
+
   QuestionaireHeaderText: {
     fontSize: 20,
     color: "white",
@@ -153,8 +163,8 @@ export default StyleSheet.create({
     justifyContent: "center",
     backgroundColor: '#757171',
     borderColor: 'black',
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: 10,
+    paddingBottom: 10,
     borderBottomWidth: 1,
     borderTopWidth:1,
   },
@@ -174,7 +184,40 @@ export default StyleSheet.create({
     borderLeftWidth: 1,
   },
   dropDownCardFrameText2 : {
-    backgroundColor: "#8cbf86",
+    backgroundColor: "#7DAB88",
+    height: "auto",
+    width: "auto",
+    paddingRight: 5,
+    paddingLeft: 5,
+    borderBottomWidth: 1,
+    borderTopWidth:1,
+    borderRightWidth:1,
+    borderLeftWidth: 1,
+  },
+  dropDownCardFrameText3 : {
+    backgroundColor: "#ABAB7D",
+    height: "auto",
+    width: "auto",
+    paddingRight: 5,
+    paddingLeft: 5,
+    borderBottomWidth: 1,
+    borderTopWidth:1,
+    borderRightWidth:1,
+    borderLeftWidth: 1,
+  },
+  dropDownCardFrameText4 : {
+    backgroundColor: "#AB927D",
+    height: "auto",
+    width: "auto",
+    paddingRight: 5,
+    paddingLeft: 5,
+    borderBottomWidth: 1,
+    borderTopWidth:1,
+    borderRightWidth:1,
+    borderLeftWidth: 1,
+  },
+  dropDownCardFrameText5 : {
+    backgroundColor: "#9B7DAB",
     height: "auto",
     width: "auto",
     paddingRight: 5,
@@ -185,7 +228,7 @@ export default StyleSheet.create({
     borderLeftWidth: 1,
   },
   dropDownCardPanel: {
-    height: 200,
+    height: 125,
     flexDirection: "row",
     backgroundColor: '#faf2f2',
     paddingTop: 5,
@@ -227,12 +270,6 @@ export default StyleSheet.create({
     fontSize: 15,
     color: "black",
     marginLeft: 10
-  },
-  properHeight1: {
-    height: 400,
-  },
-  properHeight2: {
-    height: 520,
   },
   icon: {
     left: 20,
@@ -283,5 +320,92 @@ export default StyleSheet.create({
   answerButtonText: {
     fontSize: 20,
     marginLeft: 5,
+  },
+  finalButton: {
+    alignItems: "center",
+    backgroundColor: "#757171",
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+  finalButtonText: {
+    padding: 10,
+    fontSize: 18,
+    color: "white",
+    fontWeight: "bold"
+  },
+  cardHolder: {
+    height: deviceHeight,
+    width: deviceWidth,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection:"column",
+    top: 10
+  },
+  finalRecCard: {
+    height: "auto",
+    width: deviceWidth,
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#757171",
+    borderWidth: 1,
+    borderColor: "rgba(0,0,0,0.2)",
+    paddingTop: 20,
+    paddingBottom: 20,
+    borderRadius: 10
+  },
+  tableHeader: {
+    height: "auto",
+    width: "auto",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#757171",
+    borderWidth: 1,
+    borderColor: "rgba(0,0,0,0.2)",
+    padding: 10,
+  },
+  tableHeaderText: {
+    fontSize: 15,
+    fontWeight: "bold",
+  },
+  tableCard: {
+    height: "auto",
+    width: "auto",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#faf2f2",
+    borderWidth: 1,
+    borderColor: "rgba(0,0,0,0.2)",
+    padding: 10,
+  },
+  tableCardText: {
+    fontSize: deviceWidth/28,
+  },
+  returnHomeText: {
+    padding: 10,
+    fontSize: 23,
+    color: "white",
+    fontWeight: "bold"
+  },
+  promptNewDiag: {
+    top: 40,
+    height: "auto",
+    width: "auto",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#757171",
+    borderWidth: 1,
+    borderColor: "black",
+    marginLeft: 5,
+    marginRight: 5,
+    paddingTop: 20,
+    paddingBottom: 20,
+    borderRadius: 10
+  },
+  promptNewDiagText: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 18,
+    marginLeft: 10,
+    marginRight: 10,
   }
 });

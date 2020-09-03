@@ -62,10 +62,11 @@ const Panel = (props) => {
                     onPress={toggleModal}/>
           </View>
           <Picker
+            itemStyle={{fontSize: 16}}
             selectedValue={answerName}
             onValueChange={(itemValue) => {
               changeAnswer(itemValue);
-              props.parentCallback(appData["Questionaire"][props.name]["pickerItemNames"][props.position][itemValue], props.position);
+              props.parentCallback(props.picker[props.position][itemValue], props.position);
             }}
             >
           {pickerItemList}
@@ -89,25 +90,26 @@ export default class QuestionairePanels extends Component {
 
   render() {
 
-    var panelList = [];
-
-    for(var i = 0; i < this.props.Questions.length; i++){
-      panelList.push(
-        <View key={i}>
-          {console.log(i)}
-          <Panel
-                 key={i}
-                 position={i}
-                 name={this.state.name}
-                 Question={this.props.Questions[i]}
-                 pickerItemNames = {this.props.pickerItemNames[i]}
-                 parentCallback = {
-                   (newClassification, position) => {
-                   this.props.parentCallback(newClassification, position);
-                 }}
-          />
-      </View>
-      );
+    if (this.props.isVisible){
+      var panelList = [];
+      for(var i = 0; i < this.props.Questions.length; i++){
+        panelList.push(
+          <View key={i}>
+            <Panel
+                   key={i}
+                   position={i}
+                   name={this.state.name}
+                   Question={this.props.Questions[i]}
+                   picker={this.props.pickerItemNames}
+                   pickerItemNames = {this.props.pickerItemNames[i]}
+                   parentCallback = {
+                     (newClassification, position) => {
+                     this.props.parentCallback(newClassification, position);
+                   }}
+            />
+        </View>
+        );
+      }
     }
 
     return(

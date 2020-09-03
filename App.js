@@ -8,9 +8,9 @@
  */
 import React from 'react';
 import Home from './Screens/Home';
-import NewDiagnosis from './Screens/NewDiagnosis';
 import DiagnosisList from './Screens/DiagnosisList';
-import Questionaire from './Screens/Questionaire'
+import Questionaire from './Screens/Questionaire';
+import FinalReccomendation from './Screens/FinalReccomendation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -42,16 +42,16 @@ export default function App() {
           component={Home}
           />
         <Stack.Screen
-          name="New Diagnosis"
-          component={NewDiagnosis}
-          />
-        <Stack.Screen
           name="Diagnosis List"
           component={DiagnosisList}
           />
         <Stack.Screen
           name="Questionaire"
           component={Questionaire}
+          />
+        <Stack.Screen
+          name="Final Reccomendation"
+          component={FinalReccomendation}
           />
 
 

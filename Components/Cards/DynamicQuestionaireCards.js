@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, setState, useState } from 'react';
 import { View, Text, ScrollView, SafeAreaView} from 'react-native';
 import styles from '../../Styles/GeneralStyles';
 import GeneralButton from '../Buttons/GeneralButton';
@@ -21,13 +21,15 @@ export default class DynamicQuestionaireCards extends Component {
 
     this.state = {
 
+      isSimpleVisible: true,
+
+      isComplexVisible: true,
+
       isCollapsed: true,
 
       decisionTree: x,
 
       classification: props.classification,
-
-      arrow: true,
 
       Sections : [
         {
@@ -51,7 +53,16 @@ export default class DynamicQuestionaireCards extends Component {
   };
 
   _renderHeader = (section) => {
-    var classStyle = (String(this.state.classification).localeCompare("0") && String(this.state.classification).localeCompare("N")) ? styles.dropDownCardFrameText2: styles.dropDownCardFrameText1;
+    var classStyle = styles.dropDownCardFrameText1;
+    if (this.state.classification == 1 || this.state.classification == "A"){
+      classStyle = styles.dropDownCardFrameText2
+    } else if (this.state.classification == 2 || this.state.classification == "B"){
+      classStyle = styles.dropDownCardFrameText3
+    } else if (this.state.classification == 3 || this.state.classification == "C"){
+      classStyle = styles.dropDownCardFrameText4
+    } else if (this.state.classification == 4 || this.state.classification == "D"){
+      classStyle = styles.dropDownCardFrameText5
+    }
     return (
       <View style={styles.dropDownCardFrame}>
         <Text style={styles.dropDownCardFrameText}>
@@ -63,40 +74,34 @@ export default class DynamicQuestionaireCards extends Component {
           </Text>
         </View>
         <View style={styles.icon}>
-          <FontAwesomeIcon icon={this.state.arrow ? "chevron-down" : "chevron-up"}/>
+          <FontAwesomeIcon icon={"chevron-down"}/>
         </View>
       </View>
     );
   };
 
   _renderContent = (section) => {
-    this.state.arrow = !(this.state.arrow);
     var height = (section.name.localeCompare("Physiologic")) ? styles.properHeight1 : styles.properHeight2;
+    var headerDisplay = "";
+    if (section.name.localeCompare("Physiologic")){
+      headerDisplay = section.name + " Variables";
+    } else if (section.name.localeCompare("Anatomic")){
+      headerDisplay = "Select Dominant Final Diagnosis";
+    } else {
+      headerDisplay = "Explaination";
+    }
     var headerDisplay = (section.name.localeCompare("Physiologic")) ? section.name + " Variables" : "Select Dominant Final Diagnosis";
     var display = []
     if (section.type.localeCompare("new diagnosis")) {
       display.push(
-        <View key={0}>
-          <View style={styles.dropDownCardPanelHeader}>
-            <Text style={styles.dropDownCardPanelHeaderText}>
-              Explaination
-            </Text>
-          </View>
-          <View style={styles.dropDownCardPanel2}>
-            <Text style={styles.explainationText}>{appData["Questionaire"]["ExplainationForDiagnosisListQuestionaire"]}</Text>
-          </View>
+        <View key={0} style={styles.dropDownCardPanel2}>
+          <Text style={styles.explainationText}>{appData["Questionaire"]["ExplainationForDiagnosisListQuestionaire"]}</Text>
         </View>);
-    } else {
+    } else if (section.name.localeCompare("Anatomic")) {
       display.push(
-        <View key={1}>
-          <View style={styles.dropDownCardPanelHeader}>
-            <Text style={styles.dropDownCardPanelHeaderText}>
-              {headerDisplay}
-            </Text>
-          </View>
-          <View style={height}>
-              <ScrollView>
+          <View key={1}>
                 <QuestionPanels
+                  isVisible={true}
                   name={section.name}
                   Questions={section.Questions}
                   pickerItemNames={section.pickerItemNames}
@@ -125,18 +130,60 @@ export default class DynamicQuestionaireCards extends Component {
                         }
                       }
                       this.setState({classification: max})
-                      this.setState({arrow:!(this.state.arrow)})
+                      this.props.parentCallback(max);
                     }
                   }
                 />
-            </ScrollView>
           </View>
-        </View>
+      );
+    } else {
+      display.push(
+          <View key={1}>
+                <QuestionPanels
+                  isVisible={this.state.isSimpleVisible}
+                  name={section.name}
+                  Questions={appData["Questionaire"]["Anatomic"]["Simple"]}
+                  pickerItemNames={appData["Questionaire"]["Anatomic"]["pickerSimple"]}
+                  classification={this.state.classification}
+                  parentCallback={(newClassification, position) => {
+                      if (newClassification == 2){
+                        this.setState({isComplexVisible: true});
+                      } else {
+                        this.setState({isComplexVisible: false});
+                      }
+                      this.setState({classification: newClassification})
+                      this.props.parentCallback(newClassification);
+                    }
+                  }
+                />
+                <QuestionPanels
+                  isVisible={this.state.isComplexVisible}
+                  name={section.name}
+                  Questions={appData["Questionaire"]["Anatomic"]["Complex"]}
+                  pickerItemNames={appData["Questionaire"]["Anatomic"]["pickerComplex"]}
+                  classification={this.state.classification}
+                  parentCallback={(newClassification, position) => {
+                      if (newClassification == 2){
+                        this.setState({isSimpleVisible: true});
+                      } else {
+                        this.setState({isSimpleVisible: false});
+                      }
+                      this.setState({classification: newClassification})
+                      this.props.parentCallback(newClassification);
+                    }
+                  }
+                />
+          </View>
       );
     }
     return (
-      <View>
-          {display}
+      <View key={0}>
+        <View style={styles.dropDownCardPanelHeader}>
+          <Text style={styles.dropDownCardPanelHeaderText}>
+            {headerDisplay}
+          </Text>
+        </View>
+        {display}
       </View>
     );
   };

@@ -23,12 +23,25 @@
   },
   "Questionaire": {
     "Anatomic": {
+
+      "Simple": ["Simple"],
+
+      "pickerSimple": [{"Not Selected":2,"Small ASD":1, "Small VSD":1, "Mild pulmanory stenosis":1,
+                           "Repaired ASD no shunt or chamber enlargement":1,
+                           "Repaired VSD no shunt or chamber enlargement":1, "Ligated or occulded PDA":1}],
+
+      "Complex": ["Greatly Complex or Complex"],
+
+      "pickerComplex": [{"Not Selected":2, "All single ventricle patient irrespective of palliation":3, "Cyanotic heart disease unrepaired or palliated":3,
+        "All Fontan patients":3, "DORV":3, "IAA":3, "TGA - D-TGA or cc_TGA":3, "Truncus":3, "Heterotaxy/Crisscross":3}],
+
       "Questions": ["Simple", "Greatly Complex or Complex"],
-      "pickerItemNames": [{"Not Selected":0,"Small ASD":1, "Small VSD":1, "Mild pulmanory stenosis":1,
+      "pickerItemNames": [{"Not Selected":2,"Small ASD":1, "Small VSD":1, "Mild pulmanory stenosis":1,
                            "Repaired ASD no shunt or chamber enlargement":1,
                            "Repaired VSD no shunt or chamber enlargement":1, "Ligated or occulded PDA":1},
-                          {"Not Selected":0, "All single ventricle patient irrespective of palliation":3, "Cyanotic heart disease unrepaired or palliated":3,
+                          {"Not Selected":2, "All single ventricle patient irrespective of palliation":3, "Cyanotic heart disease unrepaired or palliated":3,
                             "All Fontan patients":3, "DORV":3, "IAA":3, "TGA - D-TGA or cc_TGA":3, "Truncus":3, "Heterotaxy/Crisscross":3}],
+
     },
     "Physiologic": {
       "Questions": ["Oxygen Saturation", "NYHA classification",
@@ -52,5 +65,100 @@
                         ],
     },
     "ExplainationForDiagnosisListQuestionaire": "The reason Anatomic Classifcation is hardcoded is because you selected a diagnosis from the list. Each diagnosis has its own Anatomic Classification value.",
+
+    "Prompt1": "For future follow ups your patient should be classified as the Anatomical Class above and for today's visit the Physiological Class above.",
+  },
+
+  "FinalReccomendation": {
+
+    "TopCard": "Final AP Classification",
+
+    "MiddleCard": "Reccomendation",
+
+    "TOF": {
+      "TableA" : {
+
+        "Type of Test": ["Outpatient ACHD cardiologist",
+                         "ECG",
+                         "TTE",
+                         "Pulse oximetry",
+                         "Holter monitor",
+                         "CMR/CCT",
+                         "Excercise test",
+                        ],
+
+        "Frequency (Months)": ["12 to 24",
+                               "24",
+                               "24",
+                               "As needed",
+                               "As needed",
+                               "36",
+                               "36 to 60",
+        ]
+      },
+
+      "TableB" : {
+
+        "Type of Test": ["Outpatient ACHD cardiologist",
+                         "ECG",
+                         "TTE",
+                         "Pulse oximetry",
+                         "Holter monitor",
+                         "CMR/CCT",
+                         "Excercise test",
+                        ],
+
+        "Frequency (Months)": ["12",
+                               "12",
+                               "12 to 24",
+                               "As needed",
+                               "As needed",
+                               "24 to 36",
+                               "24 to 60",
+        ]
+      },
+
+      "TableC" : {
+
+        "Type of Test": ["Outpatient ACHD cardiologist",
+                         "ECG",
+                         "TTE",
+                         "Pulse oximetry",
+                         "Holter monitor",
+                         "CMR/CCT",
+                         "Excercise test",
+                        ],
+
+        "Frequency (Months)": ["6 to 12",
+                               "12",
+                               "12",
+                               "Each visit",
+                               "12 to 24",
+                               "12 to 24",
+                               "12 to 24",
+        ]
+      },
+
+      "TableD" : {
+
+        "Type of Test": ["Outpatient ACHD cardiologist",
+                         "ECG",
+                         "TTE",
+                         "Pulse oximetry",
+                         "Holter monitor",
+                         "CMR/CCT",
+                         "Excercise test",
+                        ],
+
+        "Frequency (Months)": ["3 to 6",
+                               "12",
+                               "6 to 12",
+                               "Each visit",
+                               "12 to 24",
+                               "12 to 24",
+                               "12 to 24",
+                              ]
+      },
+    },
   }
 }

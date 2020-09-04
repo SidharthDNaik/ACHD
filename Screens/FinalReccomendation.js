@@ -25,7 +25,7 @@ const FinalReccomendation = (props) => {
 
   var styleA = styles.dropDownCardFrameText1;
   var styleP = styles.dropDownCardFrameText1;
-  var display = [];
+  var display = [<CardTable key={0} table={appData["FinalReccomendation"][diagnosis]["TableQuestions"]}/>];
 
   if (classificationA == 1){
     styleA = styles.dropDownCardFrameText2;
@@ -39,16 +39,16 @@ const FinalReccomendation = (props) => {
 
   if ( classificationP == "A" ){
     styleP = styles.dropDownCardFrameText2;
-    display.push(<CardTable key={0} table={appData["FinalReccomendation"][diagnosis]["TableA"]}/>);
+    display.push(<CardTable key={1} table={appData["FinalReccomendation"][diagnosis]["TableA"]}/>);
   } else if ( classificationP == "B" ){
     styleP = styles.dropDownCardFrameText3;
-    display.push(<CardTable key={1} table={appData["FinalReccomendation"][diagnosis]["TableB"]}/>);
+    display.push(<CardTable key={2} table={appData["FinalReccomendation"][diagnosis]["TableB"]}/>);
   } else if ( classificationP == "C" ){
     styleP = styles.dropDownCardFrameText4;
-    display.push(<CardTable key={2} table={appData["FinalReccomendation"][diagnosis]["TableC"]}/>);
+    display.push(<CardTable key={3} table={appData["FinalReccomendation"][diagnosis]["TableC"]}/>);
   } else {
     styleP = styles.dropDownCardFrameText5;
-    display.push(<CardTable key={3} table={appData["FinalReccomendation"][diagnosis]["TableD"]}/>);
+    display.push(<CardTable key={4} table={appData["FinalReccomendation"][diagnosis]["TableD"]}/>);
   }
 
   return(
@@ -90,7 +90,9 @@ const FinalReccomendation = (props) => {
                 </Text>
               </View>
 
-              {display}
+              <View style={{flexDirection: "row"}}>
+                {display}
+              </View>
 
             </View>
 

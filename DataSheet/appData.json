@@ -1,13 +1,15 @@
 {
   "Home": {
-    "title": "ACHD",
+    "title": "ACHD-AP Classification",
+
+    "title2": "2018 Guidelines",
 
     "modalText": [
-                  "This is an app we developed to help doctors classify patients with congentital heart disease.",
-      "Click Choose from Daignosis list to select a daignosis that applies to your patient." ,
-      "Click Start New Diagnosis if none of the listed apply to your patient. This will direct you to a screen where you can classify your patient."],
+                  "This is an app developed to help providers classify adults with congentital heart disease in a comprehensive way, based on anatomic A and physiologic P variables - AP Classification based on the 2018 ACC/AHA practice guidelines. Some diagnoses have suggested minimum follow-up, and management recommendations. The classification is based on the highest relevant anatomic and physiologic feature.",
+                  "Click Classify to give your patient an anatomic and physiologic class.",
+                  "Click Diagnosis With Guidelines to access specific diagnoses that have 2018 guideline based follow-up and recommendations."],
 
-    "buttonNamesCol": ["Start New Diagnosis", "Choose from Diagnosis List"],
+    "buttonNamesCol": ["Classify Patient", "Diagnosis with Guidelines"],
 
     "buttonNamesGen": ["Help", "Close"],
 
@@ -75,6 +77,8 @@
 
     "MiddleCard": "Reccomendation",
 
+    "noData": "No Follow up schedule available for this diagnosis",
+
     "TOF": {
 
       "TableQuestions": {
@@ -135,6 +139,37 @@
                                "12 to 24",
                               ]
       },
+
+      "header": "TOF repair with PR",
+
+      "questions": {
+                        "Severely decreased LV or RV systolic function": [
+                          "Yes", "No"
+                        ],
+                        "Evaluation by an ACHD cardiologist & advanced HF team (Class I)": "A",
+                        "PR severity" : [
+                          "Mild PR", "Moderate or more PR"
+                        ],
+                        "Follow-up with ACHD cariologist": "A",
+                        "Symptoms" : [
+                          "Yes", "No"
+                        ],
+                        "Pulmonary valve replacement (Class 1)": "A",
+                        "Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance" : [
+                          "Yes", "No"
+                        ],
+                        "Pulmonary valve replacement (Class 2a)": "A",
+                        "Sustained tachyarrhythmias":[
+                          "Yes", "No"
+                        ],
+                        "Pulmonary valve replacement (Class 2b)": "A",
+                        "Residual lesions requiring surgical interventions": [
+                          "Yes", "No"
+                        ],
+                        "Pulmonary valve replacement (Class 2b) ": "A",
+                        "Follow-up with ACHD cardiologist (Class 1)": "A",
+                      },
+
     },
 
     "PS": {
@@ -182,6 +217,24 @@
                                "12",
                               ]
       },
+
+      "header": "Isolated PR after repair of PS",
+
+      "questions": {
+                        "Assessment of PR severity and RV size/function": [
+                          "Mild PR and RV enlargement", "Moderate or greater PR and RV enlargement"
+                        ],
+                        "Interval follow-up (Class 1)": "A",
+                        "Does your patient have symptoms for moderate or greater PR and RV enlargement?" : [
+                          "Yes", "No"
+                        ],
+                        "Pulmonary valve replacement (Class 1)": "A",
+                        "Does the Imaging and CPET indicate progressive RV dilation and/or RV dysfunction and/or progressive decrease in exercise capacity?" : [
+                          "Yes", "No"
+                        ],
+                        "Pulmonary valve replacement (Class 11b)": "A",
+                        "Interval follow-up with ACHD cardiologist": "A",
+                      },
     },
 
     "Branch PA": {
@@ -690,6 +743,33 @@
                                "6 to 12",
                               ]
       },
+
+      "header": "Hemodynamically significant ventricular level shunt",
+
+      "questions": {
+                        "Shunt direction": [
+                          "Right to left (Eisenmenger syndrome)", "Left to right"
+                        ],
+                        "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (class 1)\n\n PDE-5 inhibitors (class 2a) \n\n Combination therapy (class 2a)\n\n No closure (class 3: Harm)": "A",
+                        "Hemodynamic assessment": [
+                          "LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic",
+                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP >= 50% systemic"
+                        ],
+                        "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic": [
+                          "Yes", "No"
+                        ],
+                        "Consult with ACHD and PH experts (Class 1)\n\nSurgical or device closure (Class 2)": "A",
+                        "Progressive AR due to perimembarnous or supravistal VSD" : [
+                          "Yes", "No"
+                        ],
+                        "Surgical or device closure (Class 2a)": "A",
+                        "History of IE" : [
+                          "Yes", "No"
+                        ],
+                        "Surgical or device closure (Class 2b)": "A",
+                        "Continued follow-up": "A",
+                      },
+
     },
     "ASD": {
 
@@ -1140,5 +1220,7 @@
                               ]
       },
     },
+
+    "TopCard2": "Follow up schedule",
   }
 }

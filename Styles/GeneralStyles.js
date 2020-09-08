@@ -12,11 +12,17 @@ Description: This file will be imported by our screens and buttons for
 
 export default StyleSheet.create({
   titleText: {
-    top: 25,
-    fontSize: 50,
+    top: 15,
+    flex:1.2,
+    fontSize: 22,
     fontWeight: 'bold',
     color: "white",
-    flex: 2,
+  },
+  titleText2: {
+    flex:1,
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: "white",
   },
   genGradient: {
     height: deviceHeight,
@@ -75,11 +81,13 @@ export default StyleSheet.create({
   modalHeader :{
     height: "auto",
     width: "auto",
-    backgroundColor: '#757171',
+    backgroundColor: '#faf2f2',
     paddingRight: 10,
     paddingLeft: 10,
     paddingTop: 10,
     paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderColor: "rgba(0,0,0,.2)",
     alignItems: "center"
   },
   modal: {
@@ -94,8 +102,11 @@ export default StyleSheet.create({
     width: "auto",
     backgroundColor: '#faf2f2',
     paddingLeft: 10,
+    paddingRight: 10,
     paddingTop: 20,
     paddingBottom: 20,
+    borderBottomWidth: 1,
+    borderColor: "rgba(0,0,0,.2)",
   },
   modalText: {
     fontSize: 20,
@@ -104,10 +115,13 @@ export default StyleSheet.create({
   scrollableModalContent2: {
     height: "auto",
     width: "auto",
-    backgroundColor: '#757171',
+    backgroundColor: '#faf2f2',
     paddingLeft: 10,
+    paddingRight: 10,
     paddingTop: 20,
     paddingBottom: 20,
+    borderBottomWidth: 1,
+    borderColor: "rgba(0,0,0,.2)",
   },
   diagnosisList1: {
     height: deviceHeight,
@@ -334,16 +348,13 @@ export default StyleSheet.create({
     fontWeight: "bold"
   },
   cardHolder: {
-    height: deviceHeight,
-    width: deviceWidth,
     justifyContent: "center",
     alignItems: "center",
     flexDirection:"column",
     top: 10
   },
   finalRecCard: {
-    height: "auto",
-    width: deviceWidth,
+    flex:1,
     alignItems: "center",
     flexDirection: "column",
     backgroundColor: "#757171",
@@ -354,8 +365,7 @@ export default StyleSheet.create({
     borderRadius: 10
   },
   tableHeader: {
-    height: "auto",
-    width: "auto",
+    flex:1,
     alignItems: "center",
     flexDirection: "column",
     backgroundColor: "#757171",
@@ -368,8 +378,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   tableCard: {
-    height: "auto",
-    width: "auto",
+    flex:1,
     alignItems: "center",
     flexDirection: "column",
     backgroundColor: "#faf2f2",

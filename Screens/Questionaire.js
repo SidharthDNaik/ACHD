@@ -23,8 +23,13 @@ const Questionaire = (props) => {
   const { itemId } = props.route.params;
   const { diagnosis } = props.route.params;
 
-  var headerDisplayText = (diagnosis.localeCompare("new diagnosis")) ? "Selected diagnosis: " : "You are starting a ";
+  var headerDisplayText = (diagnosis.localeCompare("new diagnosis")) ? "Selected diagnosis: " : "You are classifying a patient";
   var classification = (diagnosis.localeCompare("new diagnosis")) ? appData["DiagnosisList"]["pickerItemNames"][diagnosis] : 2;
+  var DisplayDiagnosis = diagnosis;
+  if (diagnosis.localeCompare("new diagnosis") == 0){
+    DisplayDiagnosis = ""
+  }
+
 
   const [classificationA, setClassificationA] = useState(classification);
   const [classificationP, setClassificationP] = useState("N");
@@ -87,7 +92,7 @@ const Questionaire = (props) => {
           <ScrollView>
             <View style={styles.Questionaire3}>
               <Text style={styles.QuestionaireHeaderText}>
-                  {headerDisplayText}{diagnosis}
+                  {headerDisplayText}{DisplayDiagnosis}
               </Text>
             </View>
             <DynamicQuestionaireCards

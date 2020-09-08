@@ -23,6 +23,8 @@ const Home = (props) => {
 
   var title = appData["Home"]["title"]
 
+  var title2 = appData["Home"]["title2"]
+
   var modalText = appData["Home"]["modalText"];
 
   var buttonNamesCol = appData["Home"]["buttonNamesCol"];
@@ -65,6 +67,8 @@ const Home = (props) => {
 
             <Text style={styles.titleText}>
               {title} </Text>
+            <Text style={styles.titleText2}>
+                {title2} </Text>
 
           <View style={{flex: 9}}>
 

@@ -33,9 +33,9 @@ export default StyleSheet.create({
     textAlign: "center"
   },
   questionCard: {
-    width:150,
+    width:156,
     paddingTop: 5,
-    paddingBottom: 5,
+    paddingBottom: 10,
     paddingLeft: 10,
     paddingRight: 10,
     borderWidth: 1,
@@ -44,32 +44,32 @@ export default StyleSheet.create({
   },
   answerHolderA: {
     paddingBottom: 15,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 5,
+    paddingRight: 5,
     borderWidth:1,
     borderColor: "rgba(0,0,0,.2)",
     backgroundColor: "#7DAB88"
   },
   answerHolderB: {
     paddingBottom: 15,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 5,
+    paddingRight: 5,
     borderWidth:1,
     borderColor: "rgba(0,0,0,.2)",
     backgroundColor: "#ABAB7D"
   },
   answerHolderC: {
     paddingBottom: 15,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 5,
+    paddingRight: 5,
     borderWidth:1,
     borderColor: "rgba(0,0,0,.2)",
     backgroundColor: "#AB927D"
   },
   answerHolderD: {
     paddingBottom: 15,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 5,
+    paddingRight: 5,
     borderWidth:1,
     borderColor: "rgba(0,0,0,.2)",
     backgroundColor: "#9B7DAB"

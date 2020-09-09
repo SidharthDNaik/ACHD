@@ -150,11 +150,11 @@
                         },
                         "Evaluation by an ACHD cardiologist & advanced HF team (Class I)": "A",
                         "PR severity" : {
-                          "Mild PR": "Follow-up with ACHD cariologist",
+                          "Mild PR": "Follow-up with ACHD cardiologist (Class 1)",
                           "Moderate or more PR": "Symptoms",
                           "Back": "Severely decreased LV or RV systolic function"
                         },
-                        "Follow-up with ACHD cariologist": "A",
+                        "Follow-up with ACHD cardiologist (Class 1)": "A",
                         "Symptoms" : {
                           "Yes":"Pulmonary valve replacement (Class 1)",
                           "No":"Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance",
@@ -232,18 +232,24 @@
       "header": "Isolated PR after repair of PS",
 
       "questions": {
-                        "Assessment of PR severity and RV size/function": [
-                          "Mild PR and RV enlargement", "Moderate or greater PR and RV enlargement"
-                        ],
+                        "Assessment of PR severity and RV size/function": {
+                          "Mild PR and RV enlargement": "Interval follow-up (Class 1)",
+                          "Moderate or greater PR and RV enlargement": "Does your patient have symptoms for moderate or greater PR and RV enlargement?",
+                          "Back": ""
+                        },
                         "Interval follow-up (Class 1)": "A",
-                        "Does your patient have symptoms for moderate or greater PR and RV enlargement?" : [
-                          "Yes", "No"
-                        ],
+                        "Does your patient have symptoms for moderate or greater PR and RV enlargement?" : {
+                          "Yes":"Pulmonary valve replacement (Class 1)",
+                          "No":"Does the Imaging and CPET indicate progressive RV dilation and/or RV dysfunction and/or progressive decrease in exercise capacity?",
+                          "Back": "Assessment of PR severity and RV size/function"
+                        },
                         "Pulmonary valve replacement (Class 1)": "A",
-                        "Does the Imaging and CPET indicate progressive RV dilation and/or RV dysfunction and/or progressive decrease in exercise capacity?" : [
-                          "Yes", "No"
-                        ],
-                        "Pulmonary valve replacement (Class 11b)": "A",
+                        "Does the Imaging and CPET indicate progressive RV dilation and/or RV dysfunction and/or progressive decrease in exercise capacity?" : {
+                          "Yes":"Pulmonary valve replacement (Class 11b)",
+                          "No":"Interval follow-up with ACHD cardiologist",
+                          "Back": "Does your patient have symptoms for moderate or greater PR and RV enlargement?"
+                        },
+                        "Pulmonary valve replacement (Class 11b)": "C",
                         "Interval follow-up with ACHD cardiologist": "A",
                       },
     },
@@ -758,26 +764,46 @@
       "header": "Hemodynamically significant ventricular level shunt",
 
       "questions": {
-                        "Shunt direction": [
-                          "Right to left (Eisenmenger syndrome)", "Left to right"
-                        ],
+                        "Shunt direction": {
+                          "Left to right": "Hemodynamic assessment",
+                          "Right to left (Eisenmenger syndrome)": "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)",
+                          "Back": ""
+                        },
+
                         "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)": "A",
-                        "Hemodynamic assessment": [
-                          "LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic",
-                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP >= 50% systemic"
-                        ],
-                        "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic": [
-                          "Yes", "No"
-                        ],
+
+                        "Hemodynamic assessment": {
+                          "LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic": "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic",
+                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP >= 50% systemic": "Consult with ACHD and PH experts (Class 1)\n\nSurgical or device closure (Class 2)",
+                          "Back": "Shunt direction"
+                        },
+
                         "Consult with ACHD and PH experts (Class 1)\n\nSurgical or device closure (Class 2)": "A",
-                        "Progressive AR due to perimembarnous or supravistal VSD" : [
-                          "Yes", "No"
-                        ],
-                        "Surgical or device closure (Class 2a)": "A",
-                        "History of IE" : [
-                          "Yes", "No"
-                        ],
-                        "Surgical or device closure (Class 2b)": "A",
+
+                        "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic": {
+                          "Yes": "Surgical or device closure (Class 1)",
+                          "No": "Progressive AR due to perimembarnous or supravistal VSD",
+                          "Back": "Hemodynamic assessment"
+                        },
+
+                        "Surgical or device closure (Class 1)": "A",
+
+                        "Progressive AR due to perimembarnous or supravistal VSD" : {
+                          "Yes":"Surgical or device closure (Class 2a)",
+                          "No": "History of IE",
+                          "Back": "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic"
+                        },
+
+                        "Surgical or device closure (Class 2a)": "B",
+
+                        "History of IE" : {
+                          "Yes": "Surgical or device closure (Class 2b)",
+                          "No": "Continued follow-up",
+                          "Back": "Progressive AR due to perimembarnous or supravistal VSD"
+                        },
+
+                        "Surgical or device closure (Class 2b)": "C",
+
                         "Continued follow-up": "A",
                       },
 
@@ -832,6 +858,37 @@
                                "6 to 12",
                               ]
       },
+
+      "header": "Secundum ASD",
+
+      "questions": {
+                        "Shunt direction": {
+                          "Left to right": "Hemodynamic assessment",
+                          "Right to left (Eisenmenger syndrome)": "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)",
+                          "Back": ""
+                        },
+
+                        "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)": "A",
+
+                        "Hemodynamic assessment": {
+                          "Pulmonary vascular resistance < 1/3 systemic vascular resistance, PASP < 50% systemic, right heart enlargement, AND shunt large enough to cause physiologic sequelae (e.g.,QP:QS?-1.5:1)":"Does the pulmonary vascular resistance < 1/3 systemic vascular resistance, PASP < 50% systemic, right heart enlargement, AND shunt large enough to cause physiologic sequelae (e.g.,QP:QS?-1.5:1) indicate a functional impailment",
+                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP >= 50% systemic": "Consult with ACHD and PH experts (Class 1)\n\nThis may lead to a Surgical or device closure (Class 2b)",
+                          "Back": "Shunt direction"
+                        },
+
+                        "Consult with ACHD and PH experts (Class 1)\n\nThis may lead to a Surgical or device closure (Class 2b)": "C",
+
+                        "Does the pulmonary vascular resistance < 1/3 systemic vascular resistance, PASP < 50% systemic, right heart enlargement, AND shunt large enough to cause physiologic sequelae (e.g.,QP:QS?-1.5:1) indicate a functional impailment": {
+                          "Yes": "Surgical or device closure (Class 1)",
+                          "No": "Surgical or device closure (Class 2a)",
+                          "Back": "Hemodynamic assessment"
+                        },
+
+                        "Surgical or device closure (Class 1)": "A",
+
+                        "Surgical or device closure (Class 2a)": "B",
+
+                      },
     },
     "AVSD": {
 

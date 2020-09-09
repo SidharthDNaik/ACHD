@@ -101,7 +101,7 @@ const QuestionCard = (props) => {
       </View>
 
       <View style={Styles.lineRow}>
-        <View style={{alignItems: "center", paddingRight:30}}>
+        <View style={{alignItems: "center", paddingRight:10}}>
           <Line/>
           <TouchableCard
             name={props.q1}
@@ -146,10 +146,10 @@ export default function QuestionTree(props){
 
   var header = props.header;
   var questions = props.questions;
-  var questionsKeys = Object.keys(questions);
 
   if (questions){
 
+    var questionsKeys = Object.keys(questions);
     const [q, setQ] = useState(questionsKeys[0]);
     const changeQ = (question) => {
       setQ(question);

@@ -143,30 +143,41 @@
       "header": "TOF repair with PR",
 
       "questions": {
-                        "Severely decreased LV or RV systolic function": [
-                          "Yes", "No"
-                        ],
+                        "Severely decreased LV or RV systolic function": {
+                          "Yes": "Evaluation by an ACHD cardiologist & advanced HF team (Class I)",
+                          "No": "PR severity",
+                          "Back": ""
+                        },
                         "Evaluation by an ACHD cardiologist & advanced HF team (Class I)": "A",
-                        "PR severity" : [
-                          "Mild PR", "Moderate or more PR"
-                        ],
+                        "PR severity" : {
+                          "Mild PR": "Follow-up with ACHD cariologist",
+                          "Moderate or more PR": "Symptoms",
+                          "Back": "Severely decreased LV or RV systolic function"
+                        },
                         "Follow-up with ACHD cariologist": "A",
-                        "Symptoms" : [
-                          "Yes", "No"
-                        ],
+                        "Symptoms" : {
+                          "Yes":"Pulmonary valve replacement (Class 1)",
+                          "No":"Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance",
+                          "Back": "PR severity"
+                        },
                         "Pulmonary valve replacement (Class 1)": "A",
-                        "Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance" : [
-                          "Yes", "No"
-                        ],
-                        "Pulmonary valve replacement (Class 2a)": "A",
-                        "Sustained tachyarrhythmias":[
-                          "Yes", "No"
-                        ],
-                        "Pulmonary valve replacement (Class 2b)": "A",
-                        "Residual lesions requiring surgical interventions": [
-                          "Yes", "No"
-                        ],
-                        "Pulmonary valve replacement (Class 2b) ": "A",
+                        "Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance" : {
+                          "Yes": "Pulmonary valve replacement (Class 2a)",
+                          "No": "Sustained tachyarrhythmias",
+                          "Back": "Symptoms"
+                        },
+                        "Pulmonary valve replacement (Class 2a)": "B",
+                        "Sustained tachyarrhythmias":{
+                          "Yes": "Pulmonary valve replacement (Class 2b)",
+                          "No": "Residual lesions requiring surgical interventions",
+                          "Back": "Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance"
+                        },
+                        "Pulmonary valve replacement (Class 2b)": "C",
+                        "Residual lesions requiring surgical interventions": {
+                          "Yes": "Pulmonary valve replacement (Class 2b)",
+                          "No": "Follow-up with ACHD cardiologist (Class 1)",
+                          "Back": "Sustained tachyarrhythmias"
+                        },
                         "Follow-up with ACHD cardiologist (Class 1)": "A",
                       },
 
@@ -750,7 +761,7 @@
                         "Shunt direction": [
                           "Right to left (Eisenmenger syndrome)", "Left to right"
                         ],
-                        "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (class 1)\n\n PDE-5 inhibitors (class 2a) \n\n Combination therapy (class 2a)\n\n No closure (class 3: Harm)": "A",
+                        "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)": "A",
                         "Hemodynamic assessment": [
                           "LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic",
                           "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP >= 50% systemic"

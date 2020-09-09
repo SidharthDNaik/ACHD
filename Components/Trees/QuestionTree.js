@@ -17,6 +17,16 @@ const HeaderCard = (props) => {
 };
 
 const AnswerCard = (props) => {
+  var holder = Styles.card;
+  if (props.value.localeCompare("A") == 0){
+    holder = Styles.answerHolderA;
+  } else if (props.value.localeCompare("B") == 0){
+    holder = Styles.answerHolderB;
+  } else if (props.value.localeCompare("C") == 0){
+    holder = Styles.answerHolderC;
+  } else if (props.value.localeCompare("D") == 0){
+    holder = Styles.answerHolderD;
+  }
   return(
     <View style={{flexDirection: "column", alignItems: "center"}}>
 
@@ -33,7 +43,7 @@ const AnswerCard = (props) => {
                     />
           </View>
 
-          <View style={Styles.answerHolder}>
+          <View style={holder}>
             <View style={Styles.cardHeader}>
               <View style={{paddingBottom: 5, borderBottomWidth: 1, borderColor: "rgba(0,0,0,.2)"}}>
                 <Text style={Styles.cardHeaderText}>
@@ -56,7 +66,7 @@ const AnswerCard = (props) => {
 
 const QuestionCard = (props) => {
   var display = [];
-  if (props.qCounter != 0){
+  if (props.prevQ.localeCompare("") != 0){
     display.push(
       <View key={0}
             style={{paddingBottom: 10, flexDirection: "row-reverse"}}>
@@ -136,65 +146,63 @@ export default function QuestionTree(props){
 
   var header = props.header;
   var questions = props.questions;
+  var questionsKeys = Object.keys(questions);
 
   if (questions){
 
-    const [qCounter, setQCounter] = useState(0);
-    const incQCounter = (inc) => {
-      if(qCounter < Object.keys(questions).length){
-        setQCounter(qCounter+inc)
-      }
+    const [q, setQ] = useState(questionsKeys[0]);
+    const changeQ = (question) => {
+      setQ(question);
     }
-    const resetQCounter = () => {
-      if(qCounter < Object.keys(questions).length){
-        setQCounter(0)
-      }
+    const resetQ = () => {
+      setQ(questionsKeys[0])
     }
 
     var display = [];
 
-    var question = Object.keys(questions)[qCounter];
-    if (typeof questions[question] == 'string' && questions[question].localeCompare("A") == 0){
+    if (typeof questions[q] == 'string'){
       display.push(
         <AnswerCard key={0}
-                    name={question}
+                    name={q}
                     onPress={()=>{
-                      resetQCounter();
+                      resetQ();
                     }}
+                    value={questions[q]}
         />
       );
     } else {
-        var questionA = questions[question][0];
-        var questionB = questions[question][1];
+        var questionA = Object.keys(questions[q])[0];
+        var questionB = Object.keys(questions[q])[1];
+        var prevQ = questions[q]["Back"];
 
         display.push(
           <QuestionCard key={1}
-                        name={question}
+                        name={q}
                         q1={questionA}
                         q1OnPress={()=>{
-                          incQCounter(1)
+                          changeQ(questions[q][questionA]);
                         }}
                         q2={questionB}
                         q2OnPress={()=>{
-                          incQCounter(2)
+                          changeQ(questions[q][questionB]);
                         }}
                         onPress={()=>{
-                          incQCounter(-2)
+                          changeQ(prevQ);
                         }}
-                        qCounter={qCounter}
+                        prevQ={prevQ}
           />
         );
     }
 
     return(
-      <View style={{flexDirection:"column", alignItems: "center"}}>
+      <View style={Styles.treeContainer}>
         <HeaderCard name={header}/>
         {display}
       </View>
     );
   } else{
     return(
-      <View style={{flexDirection:"column", alignItems: "center"}}>
+      <View style={Styles.treeContainer}>
         <Text style={{color: "white", fontSize: 15, fontWeight: "bold", paddingTop:10}}>
           {props.noData}
         </Text>

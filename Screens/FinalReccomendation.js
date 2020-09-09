@@ -125,7 +125,7 @@ const FinalReccomendation = (props) => {
                   }
                 }
               />
-              <View style={{height: 150}}>
+              <View style={{height: 200}}>
               </View>
             </View>
 

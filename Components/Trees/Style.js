@@ -5,6 +5,11 @@ var deviceHeight = Dimensions.get('window').height;
 var deviceWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
+  treeContainer: {
+    width: deviceWidth,
+    flexDirection: "column",
+    alignItems: "center"
+  },
   card: {
     width:370,
     padding: 15,
@@ -37,12 +42,37 @@ export default StyleSheet.create({
     borderColor: "rgba(0,0,0,.2)",
     alignItems: "center"
   },
-  answerHolder: {
-    paddingBottom: 10,
+  answerHolderA: {
+    paddingBottom: 15,
     paddingLeft: 10,
     paddingRight: 10,
     borderWidth:1,
     borderColor: "rgba(0,0,0,.2)",
+    backgroundColor: "#7DAB88"
+  },
+  answerHolderB: {
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderWidth:1,
+    borderColor: "rgba(0,0,0,.2)",
+    backgroundColor: "#ABAB7D"
+  },
+  answerHolderC: {
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderWidth:1,
+    borderColor: "rgba(0,0,0,.2)",
+    backgroundColor: "#AB927D"
+  },
+  answerHolderD: {
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderWidth:1,
+    borderColor: "rgba(0,0,0,.2)",
+    backgroundColor: "#9B7DAB"
   },
   lineRow: {
     alignItems: "center",

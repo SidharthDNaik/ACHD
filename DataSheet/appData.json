@@ -81,6 +81,15 @@
 
     "TOF": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Reccomendations for TOF", "Reccomendations for TOF (Continued)"],
+
+        "panelImages": ["image2-24.png", "image3-26.png"]
+
+      },
+
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -185,6 +194,12 @@
 
     "PS": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Reccomendations for Valvular Pulmonary Stenosis", "Reccomendations for Isolated PR After Repair of Pulmonary Stenosis"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -256,6 +271,12 @@
 
     "Branch PA": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Branch and Peripheral PS"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -307,6 +328,12 @@
     },
 
     "DCRV": {
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Double-Chambered Right Ventricle"],
+
+      },
 
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
@@ -1289,6 +1316,8 @@
       },
     },
 
-    "TopCard2": "Follow up schedule",
+    "TopCard2": "Additional Reccomendations",
+
+    "TopCard3": "Follow up Schedule",
   }
 }

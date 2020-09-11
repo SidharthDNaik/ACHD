@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {View} from 'react-native'
-import {Picker} from '@react-native-community/picker';
+import {View, Picker} from 'react-native'
 import styles from '../../Styles/GeneralStyles';
 import GeneralButton from '../Buttons/GeneralButton'
 

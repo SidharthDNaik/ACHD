@@ -1,10 +1,9 @@
 import React, { Component, useState, setState} from 'react';
-import { ScrollView, View, Text } from 'react-native'
+import { ScrollView, View, Text, Picker} from 'react-native'
 import styles from '../../Styles/GeneralStyles';
 import Modal from 'react-native-modal';
 import appData from '../../DataSheet/appData.json';
 import GeneralButton from '../Buttons/GeneralButton';
-import {Picker} from '@react-native-community/picker';
 
 const Panel = (props) => {
 

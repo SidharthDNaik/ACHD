@@ -17,6 +17,7 @@ import appData from '../DataSheet/appData'
 import GeneralButton from '../Components/Buttons/GeneralButton'
 import CardTable from '../Components/Cards/CardTable'
 import QuestionTree from '../Components/Trees/QuestionTree'
+import ImgDisplayer from '../Components/IMGDisplayer/ImgDisplayer'
 
 const FinalReccomendation = (props) => {
 
@@ -104,6 +105,20 @@ const FinalReccomendation = (props) => {
               <View style={{paddingBottom: 9, borderBottomWidth:1, borderColor: "rgba(0,0,0,.2)"}}>
                 <Text style={styles.dropDownCardFrameText}>
                   {appData["FinalReccomendation"]["TopCard2"]}
+                </Text>
+              </View>
+              <ImgDisplayer
+                panelNames={appData["FinalReccomendation"][diagnosis]["AdditionalReccomendations"]["panelNames"]}
+                />
+            </View>
+
+            <View style={{height: 10}}>
+            </View>
+
+            <View style={styles.finalRecCard}>
+              <View style={{paddingBottom: 9, borderBottomWidth:1, borderColor: "rgba(0,0,0,.2)"}}>
+                <Text style={styles.dropDownCardFrameText}>
+                  {appData["FinalReccomendation"]["TopCard3"]}
                 </Text>
               </View>
 

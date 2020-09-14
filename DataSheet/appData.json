@@ -77,15 +77,19 @@
 
     "MiddleCard": "Reccomendation",
 
-    "noData": "No Follow up schedule available for this diagnosis",
+    "noData": "No follow up schedule available for this diagnosis",
+
+    "noData2": "No additional reccomendations available for this diagnosis",
+
+    "TopCard2": "Additional Reccomendations",
+
+    "TopCard3": "Follow up Schedule",
 
     "TOF": {
 
       "AdditionalReccomendations": {
 
         "panelNames": ["Reccomendations for TOF", "Reccomendations for TOF (Continued)"],
-
-        "panelImages": ["image2-24.png", "image3-26.png"]
 
       },
 
@@ -382,6 +386,12 @@
 
     "Ebsteins": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Ebstein Anomaly", "Recommendations for Ebstein Anomaly (Continued)"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -449,6 +459,12 @@
 
     "RV to PA": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Right Ventricle-to-PA conduit"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -500,6 +516,12 @@
     },
 
     "TGA_Atrial switch": {
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for d-TGA with Artial Switch"],
+
+      },
 
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
@@ -564,6 +586,12 @@
 
     "TGA_arterial switch": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for d-TGA With Arterial Switch"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -615,6 +643,12 @@
     },
 
     "cc-TGA": {
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Congenitally Corrected Transposition of the Great Arteries"],
+
+      },
 
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
@@ -678,6 +712,12 @@
 
     "Fotan": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Fontan Palliation of Single Ventricle Physiology", "Recommendations for Fontan Palliation of Single Ventricle Physiology (Continued)", "Recommendations for Fontan Palliation of Single Ventricle Physiology (Cont. Extended)"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -738,6 +778,12 @@
       },
     },
     "VSD": {
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Ventricular Septal Defect"],
+
+      },
 
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
@@ -837,6 +883,12 @@
     },
     "ASD": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Atrial Septal Defect","Recommendations for Atrial Septal Defect (Continued)"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -919,6 +971,12 @@
     },
     "AVSD": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Atrioventricular Septal Defect","Recommendations for Atrioventricular Septal Defect (Continued)"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -969,6 +1027,12 @@
       },
     },
     "PDA": {
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Patent Ductus Arteriosus"],
+
+      },
 
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
@@ -1021,6 +1085,12 @@
     },
     "Congenital MS": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": [""],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -1067,6 +1137,12 @@
     },
     "Subaortic stenosis": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Subaortic Stenosis"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -1112,6 +1188,12 @@
       },
     },
     "Supravalvular AS": {
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Supravalvular Aortic Stenosis"],
+
+      },
 
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
@@ -1164,6 +1246,12 @@
     },
     "CoA": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Coartation of the Aorta", "Recommendations for Coarctation of the Aorta (Continued)"],
+
+      },
+
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
                          "ECG",
@@ -1215,8 +1303,14 @@
     },
     "AS": {
 
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Congenital Valvular Aortic Stenosis","Recommendations for Congenital Valvular Aortic Stenosis (Continued)"],
+
+      },
+
       "TableQuestions": {
-        "Type of Test": ["Progressive (Stage B) \n",
+        "Stage": ["Progressive (Stage B) \n",
                          "Severe (Stage C)",
                          "Aortic dilation > 4.5 cm",
                         ],
@@ -1255,6 +1349,12 @@
       },
     },
     "Eisenmenger": {
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Recommendations for Severe PAH","Recomendations for Severe PAH (Continued)", "Recommendations for Eisenmenger Syndrome", "Recommendations for Eisenmenger Syndrome (Continued)"],
+
+      },
 
       "TableQuestions": {
         "Type of Test": ["Outpatient ACHD cardiologist",
@@ -1315,9 +1415,5 @@
                               ]
       },
     },
-
-    "TopCard2": "Additional Reccomendations",
-
-    "TopCard3": "Follow up Schedule",
   }
 }

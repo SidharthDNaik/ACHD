@@ -75,7 +75,7 @@ const Questionaire = (props) => {
 
   if(isPrompt){
     display.push(
-      <View key={0} style={styles.promptNewDiag}>
+      <View key={1} style={styles.promptNewDiag}>
         <Text style={styles.promptNewDiagText}>
           {appData["Questionaire"]["Prompt1"]}
         </Text>

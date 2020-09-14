@@ -18,22 +18,19 @@ const Row = (props) => {
 
   var display = [];
 
-    display.push(<Card key={1}
-                       styleView={styles.tableHeader}
-                       styleText={styles.tableHeaderText}
-                       textValue={props.rowName}
-                  />);
-
-    for (var i = 0; i < props.row.length; i++){
-      display.push(<Card key={i+2}
-                         styleView={styles.tableCard}
-                         styleText={styles.tableCardText}
-                         textValue={props.row[i]}
-                    />)
-    }
+  for (var i = 0; i < props.row.length; i++){
+    display.push( <View key={i}>
+                    <Card  key={i}
+                          styleView={props.style}
+                          styleText={props.textStyle}
+                          textValue={props.row[i]}
+                    />
+                  </View>
+              );
+  }
 
   return(
-    <View style={{flexDirection: "column"}}>
+    <View style={{flexDirection: "row"}}>
       {display}
     </View>
 
@@ -50,19 +47,49 @@ export default class CardTable extends Component {
 
   render () {
 
-    var display = [];
+    var keyQues = Object.keys(this.props.tableQuestions)[0];
+    var keyAns = Object.keys(this.props.tableAnswers)[0];
 
-    for(var i in this.props.table){
+    var table = {};
+
+    table[keyQues] = this.props.tableQuestions[keyQues];
+    table[keyAns] = this.props.tableAnswers[keyAns];
+
+    var newTable = [[]]
+    var keys = Object.keys(table);
+    for(var i in table[keys[0]]){
+      newTable.push([]);
+    }
+
+    for(var i in table){
+      newTable[0].push(i);
+      for (var j = 0; j < table[i].length; j++){
+        newTable[j+1].push(table[i][j])
+      }
+    }
+
+    var display = [];
+    var style = styles.tableHeader;
+    var textStyle = styles.tableHeaderText;
+
+    for(var i = 0; i < newTable.length; i++){
+      if (i != 0) {
+        style = styles.tableCard
+        textStyle = styles.tableCardText
+      }
       display.push(
-        <Row key={i}
-             row={this.props.table[i]}
-             rowName={i}
-        />
+        <View key={i}>
+          <Row key={i}
+               row={newTable[i]}
+               style={style}
+               textStyle={textStyle}
+          />
+        </View>
       );
     }
 
     return (
-      <View style={{flexDirection: "row"}}>
+      <View style={{flexDirection: "column"}}>
         {display}
       </View>
     );

@@ -27,7 +27,9 @@ const FinalReccomendation = (props) => {
 
   var styleA = styles.dropDownCardFrameText1;
   var styleP = styles.dropDownCardFrameText1;
-  var display = [<CardTable key={0} table={appData["FinalReccomendation"][diagnosis]["TableQuestions"]}/>];
+  var display = [];
+  var tableQuestions = appData["FinalReccomendation"][diagnosis]["TableQuestions"];
+  var tableAnswers;
 
   if (classificationA == 1){
     styleA = styles.dropDownCardFrameText2;
@@ -38,21 +40,31 @@ const FinalReccomendation = (props) => {
   } else{
     styleA = styles.dropDownCardFrameText5;
   }
-
   if ( classificationP == "A" ){
+    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableA"];
+    display.push(
+      <CardTable key={0} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+    );
     styleP = styles.dropDownCardFrameText2;
-    display.push(<CardTable key={1} table={appData["FinalReccomendation"][diagnosis]["TableA"]}/>);
   } else if ( classificationP == "B" ){
+    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableB"];
+    display.push(
+      <CardTable key={1} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+    );
     styleP = styles.dropDownCardFrameText3;
-    display.push(<CardTable key={2} table={appData["FinalReccomendation"][diagnosis]["TableB"]}/>);
   } else if ( classificationP == "C" ){
+    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableC"];
+    display.push(
+      <CardTable key={2} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+    );
     styleP = styles.dropDownCardFrameText4;
-    display.push(<CardTable key={3} table={appData["FinalReccomendation"][diagnosis]["TableC"]}/>);
   } else {
+    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableD"];
+    display.push(
+      <CardTable key={3} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+    );
     styleP = styles.dropDownCardFrameText5;
-    display.push(<CardTable key={4} table={appData["FinalReccomendation"][diagnosis]["TableD"]}/>);
   }
-
   return(
     <LinearGradient colors={['#757171', '#faf2f2']}
                     style={styles.genGradient}
@@ -60,7 +72,7 @@ const FinalReccomendation = (props) => {
                     end={{ x: 1, y: 1 }}>
         <View style={styles.cardHolder}>
           <ScrollView>
-            <View style={styles.finalRecCard}>
+            <View style={styles.finalRecCard0}>
 
               <View style= {{alignItems: "center", flexDirection:"column", bottom: 10}}>
                 <Text style={styles.dropDownCardFrameText}>

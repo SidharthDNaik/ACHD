@@ -203,7 +203,7 @@ export default function QuestionTree(props){
   } else{
     return(
       <View style={Styles.treeContainer}>
-        <Text style={{color: "white", fontSize: 15, fontWeight: "bold", paddingTop:10}}>
+        <Text style={{color: "white", fontSize: 15, fontWeight: "bold", padding:10, textAlign:"center"}}>
           {props.noData}
         </Text>
       </View>

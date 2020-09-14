@@ -83,14 +83,11 @@ export default class DynamicQuestionaireCards extends Component {
   _renderContent = (section) => {
     var height = (section.name.localeCompare("Physiologic")) ? styles.properHeight1 : styles.properHeight2;
     var headerDisplay = "";
-    if (section.name.localeCompare("Physiologic")){
+    if ((section.name.localeCompare("Physiologic") || section.name.localeCompare("Anatomic")) && section.type.localeCompare("new diagnosis") == 0){
       headerDisplay = section.name + " Variables";
-    } else if (section.name.localeCompare("Anatomic")){
-      headerDisplay = "Select Dominant Final Diagnosis";
     } else {
       headerDisplay = "Explaination";
     }
-    var headerDisplay = (section.name.localeCompare("Physiologic")) ? section.name + " Variables" : "Select Dominant Final Diagnosis";
     var display = []
     if (section.type.localeCompare("new diagnosis")) {
       display.push(

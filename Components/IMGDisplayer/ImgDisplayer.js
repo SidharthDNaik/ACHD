@@ -1,8 +1,9 @@
 import React, {useState, setState} from 'react';
-import {View, TouchableOpacity, Text, Image} from 'react-native';
+import {View, TouchableOpacity, Text, Image, ScrollView} from 'react-native';
 import styles from './Style'
 import GeneralButton from '../Buttons/GeneralButton'
 import Modal from 'react-native-modal';
+import appData from '../../DataSheet/appData'
 
 function findImage(name){
   switch(name){
@@ -10,7 +11,7 @@ function findImage(name){
       return require("../../DataSheet/Images/1.png");
       break;
     case "Reccomendations for Valvular Pulmonary Stenosis":
-      return require("../../DataSheet/Images/error.png");
+      return require("../../DataSheet/Images/3.png");
       break;
     case "Recommendations for Branch and Peripheral PS":
       return require("../../DataSheet/Images/5.png");
@@ -27,7 +28,7 @@ function findImage(name){
     case "Recommendations for Fontan Palliation of Single Ventricle Physiology":
       return require("../../DataSheet/Images/13.png");
       break;
-    case "Fontan":
+    case "Recommendations for Fontan Palliation of Single Ventricle Physiology (Cont. Extended)":
       return require("../../DataSheet/Images/15.png");
       break;
     case "Recommendations for Atrial Septal Defect":
@@ -45,7 +46,7 @@ function findImage(name){
     case "Recommendations for Coarctation of the Aorta (Continued)":
       return require("../../DataSheet/Images/25.png");
       break;
-    case "Recommendations for Congenital Valvular Aortic Stenosis":
+    case "Recommendations for Congenital Valvular Aortic Stenosis (Continued)":
       return require("../../DataSheet/Images/27.png");
       break;
     case "Recomendations for Severe PAH (Continued)":
@@ -61,12 +62,12 @@ function findImage(name){
       return require("../../DataSheet/Images/2.png");
       break;
     case "Reccomendations for Isolated PR After Repair of Pulmonary Stenosis":
-      return require("../../DataSheet/Images/error.png");
+      return require("../../DataSheet/Images/4.png");
       break;
     case "Recommendations for Double-Chambered Right Ventricle":
       return require("../../DataSheet/Images/6.png");
       break;
-    case "Recommendations for Ebstein Anomaly":
+    case "Recommendations for Ebstein Anomaly (Continued)":
       return require("../../DataSheet/Images/8.png");
       break;
     case "Recommendations for d-TGA with Artial Switch":
@@ -138,7 +139,13 @@ export default function ImgDisplayer(props){
   const[imgThree, setImgThree] = useState(false);
 
   const toggleImgThree = () => {
-    setImgTwo(!imgThree)
+    setImgThree(!imgThree)
+  }
+
+  const[imgFour, setImgFour] = useState(false);
+
+  const toggleImgFour = () => {
+    setImgFour(!imgFour)
   }
 
   var images = [];
@@ -149,47 +156,58 @@ export default function ImgDisplayer(props){
 
   var display = [];
 
-    display.push(
-      <View key={0}>
-        <Panel
-          key={0}
-          name={props.panelNames[0]}
-          onPress={
-            toggleImgOne
-          }
-        />
-        <Modal
-          style={{marginBottom: 0, marginLeft: 0, marginRight:0, marginTop:35}}
-          isVisible={imgOne}
-          >
-            <View style={styles.closeButton}>
-              <GeneralButton
-                      buttonStyle={styles.closeButtonStyle}
-                      textStyle={styles.closeButtonText}
-                      name={"Close"}
-                      onPress={toggleImgOne}/>
-            </View>
-            <Image
-              style={{height: "100%", width: "100%"}}
-              resizeMode="contain"
-              source={images[0]}
-            />
-        </Modal>
-      </View>
-    );
+  if(props.panelNames[0].localeCompare("") == 0){
+    display.push(<View  key={-1}
+                        style={{paddingTop:10}}>
+                  <Text style={styles.panelText}>
+                    {appData["FinalReccomendation"]["noData2"]}
+                  </Text>
+                </View>)
+  } else {
+      display.push(
+        <View key={0}>
+          <Panel
+            key={props.panelNames[0]}
+            name={props.panelNames[0]}
+            onPress={
+              toggleImgOne
+            }
+          />
+          <Modal
+            style={styles.modal}
+            isVisible={imgOne}
+            >
+              <View style={styles.closeButton}>
+                <GeneralButton
+                        buttonStyle={styles.closeButtonStyle}
+                        textStyle={styles.closeButtonText}
+                        name={"Close"}
+                        onPress={toggleImgOne}/>
+              </View>
+              <View style={styles.imgHolder}>
+                  <Image
+                    style={{height: "100%", width: "100%"}}
+                    resizeMode="contain"
+                    source={images[0]}
+                  />
+              </View>
+          </Modal>
+        </View>
+      );
+    }
     if(props.panelNames[1]){
 
       display.push(
         <View key={1}>
           <Panel
-            key={1}
+            key={props.panelNames[1]}
             name={props.panelNames[1]}
             onPress={
               toggleImgTwo
             }
           />
           <Modal
-            style={{marginBottom: 0, marginLeft: 0, marginRight:0, marginTop:35}}
+            style={styles.modal}
             isVisible={imgTwo}
             >
               <View style={styles.closeButton}>
@@ -215,16 +233,17 @@ export default function ImgDisplayer(props){
       display.push(
         <View key={2}>
           <Panel
-            key={2}
+            key={props.panelNames[2]}
             name={props.panelNames[2]}
             onPress={
               toggleImgThree
             }
           />
           <Modal
-            style={{marginBottom: 0, marginLeft: 0, marginRight:0, marginTop:35}}
+            style={styles.modal}
             isVisible={imgThree}
             >
+
               <View style={styles.closeButton}>
                 <GeneralButton
                         buttonStyle={styles.closeButtonStyle}
@@ -236,6 +255,39 @@ export default function ImgDisplayer(props){
                   style={{height: "100%", width: "100%"}}
                   resizeMode="contain"
                   source={images[2]}
+                />
+          </Modal>
+        </View>
+
+      );
+    }
+
+    if(props.panelNames[3]){
+
+      display.push(
+        <View key={3}>
+          <Panel
+            key={props.panelNames[3]}
+            name={props.panelNames[3]}
+            onPress={
+              toggleImgFour
+            }
+          />
+          <Modal
+            style={styles.modal}
+            isVisible={imgFour}
+            >
+              <View style={styles.closeButton}>
+                <GeneralButton
+                        buttonStyle={styles.closeButtonStyle}
+                        textStyle={styles.closeButtonText}
+                        name={"Close"}
+                        onPress={toggleImgFour}/>
+              </View>
+                <Image
+                  style={{height: "100%", width: "100%"}}
+                  resizeMode="contain"
+                  source={images[3]}
                 />
           </Modal>
         </View>

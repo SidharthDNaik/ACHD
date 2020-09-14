@@ -353,8 +353,19 @@ export default StyleSheet.create({
     flexDirection:"column",
     top: 10
   },
+  finalRecCard0: {
+    width: deviceWidth,
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#757171",
+    borderWidth: 1,
+    borderColor: "rgba(0,0,0,0.2)",
+    paddingTop: 20,
+    paddingBottom: 20,
+    borderRadius: 10
+  },
   finalRecCard: {
-    flex:1,
+    width: deviceWidth,
     alignItems: "center",
     flexDirection: "column",
     backgroundColor: "#757171",
@@ -366,8 +377,10 @@ export default StyleSheet.create({
   },
   tableHeader: {
     flex:1,
+    width: 180,
     alignItems: "center",
     flexDirection: "column",
+    justifyContent: "center",
     backgroundColor: "#757171",
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.2)",
@@ -379,8 +392,10 @@ export default StyleSheet.create({
   },
   tableCard: {
     flex:1,
+    width: 180,
     alignItems: "center",
     flexDirection: "column",
+    justifyContent: "center",
     backgroundColor: "#faf2f2",
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.2)",
@@ -388,6 +403,7 @@ export default StyleSheet.create({
   },
   tableCardText: {
     fontSize: deviceWidth/28,
+    textAlign: "center"
   },
   returnHomeText: {
     padding: 10,

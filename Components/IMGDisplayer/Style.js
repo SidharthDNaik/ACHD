@@ -22,15 +22,8 @@ export default StyleSheet.create({
     flexDirection: "column",
     alignItems: "center"
   },
-  imgOneHolder: {
+  imgHolder: {
     flex:1,
-    backgroundColor:"white",
-    alignItems:"center",
-    justifyContent: "center"
-  },
-  imgTwoHolder: {
-    flex:1,
-    backgroundColor:"white",
     alignItems:"center",
     justifyContent: "center"
   },
@@ -54,4 +47,10 @@ export default StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
   },
+  modal: {
+    marginBottom: 0,
+    marginLeft: 0,
+    marginRight:0,
+    marginTop:60
+  }
 });

@@ -34,32 +34,21 @@
 
       "Complex": ["Greatly Complex or Complex"],
 
-      "pickerComplex": [{
-        "Not Selected":2,
-        "Cyanotic congenital heart defect (unrepaired or palliated, all forms)":3,
-        "Double-outlet ventricle":3,
-        "Fontan procedure":3,
-        "Interrupted aortic arch":3,
-        "Mitral atresia":3,
-        "Single ventricle (including double inlet left ventricle, tricuspid atresia, hypoplastic left heart, any other anatomic abnormality with a functionally single ventricle)":3,
-        "Pulmonary atresia (all forms)":3,
-        "TGA (classic or d-TGA; CCTGA or l-TGA)":3,
-        "Truncus arteriosus":3,
-        "Other abnormalities of atrioventricular and ventriculoarterial connection (ie, crisscross heart, isomerism, heterotaxy syndromes, ventricular inversion)":3
-        }],
+      "pickerComplex": [{"Not Selected":2, "Cyanotic congenital heart defect (unrepaired or palliated, all forms)":3, "Double-outlet ventricle":3,
+        "Fontan procedure":3, "Interrupted aortic arch":3, "Mitral atresia":3, "Single ventricle (including double inlet left ventricle, tricuspid atresia,
+hypoplastic left heart, any other anatomic abnormality with a
+functionally single ventricle)":3, "Pulmonary atresia (all forms)":3, "TGA (classic or d-TGA; CCTGA or l-TGA)":3, "Truncus arteriosus":3, "Other abnormalities of atrioventricular and ventriculoarterial connection
+(ie, crisscross heart, isomerism, heterotaxy syndromes, ventricular inversion)":3}],
 
       "Questions": ["Simple", "Greatly Complex or Complex"],
-      "pickerItemNames": [{
-        "Not Selected":2,
-        "Cyanotic congenital heart defect (unrepaired or palliated, all forms)":3,
-        "Double-outlet ventricle":3,
-        "Fontan procedure":3,
-        "Interrupted aortic arch":3,
-        "Mitral atresia":3,
-        "Single ventricle (including double inlet left ventricle, tricuspid atresia, hypoplastic left heart, any other anatomic abnormality with a functionally single ventricle)":3, "Pulmonary atresia (all forms)":3, "TGA (classic or d-TGA; CCTGA or l-TGA)":3,
-        "Truncus arteriosus":3,
-        "Other abnormalities of atrioventricular and ventriculoarterial connection (ie, crisscross heart, isomerism, heterotaxy syndromes, ventricular inversion)":3
-        }],
+      "pickerItemNames": [{"Not Selected":2,"Small ASD":1, "Small VSD":1, "Mild pulmanory stenosis":1,
+                           "Repaired ASD no shunt or chamber enlargement":1,
+                           "Repaired VSD no shunt or chamber enlargement":1, "Ligated or occulded PDA":1},
+                          {"Not Selected":2, "Cyanotic congenital heart defect (unrepaired or palliated, all forms)":3, "Double-outlet ventricle":3,
+        "Fontan procedure":3, "Interrupted aortic arch":3, "Mitral atresia":3, "Single ventricle (including double inlet left ventricle, tricuspid atresia,
+hypoplastic left heart, any other anatomic abnormality with a
+functionally single ventricle)":3, "Pulmonary atresia (all forms)":3, "TGA (classic or d-TGA; CCTGA or l-TGA)":3, "Truncus arteriosus":3, "Other abnormalities of atrioventricular and ventriculoarterial connection
+(ie, crisscross heart, isomerism, heterotaxy syndromes, ventricular inversion)":3}],
 
     },
     "Physiologic": {
@@ -78,7 +67,7 @@
                           {"Not Selected":0, "None":1,        "Mild":2,                  "Moderate":3,     "Severe":3},
                           {"Not Selected":0, "None":1,        "Present":3},
                           {"Not Selected":0, "Normal":1,      "Moderate":3,              "Severe":4},
-                          {"Not Selected":0, "None":1,        "Trivial or small (not hemodynamically significant)":2, "Chamber enlargement distal to shunt and/or Qp/Qs >= 1.5":3},
+                          {"Not Selected":0, "None":1,"Trivial or small (not hemodynamically significant)":2, "Chamber enlargement distal to shunt and/or Qp/Qs >= 1.5":3},
                           {"Not Selected":0, "Normal":1,      "Objective abnormality":2},
                           {"Not Selected":0, "None":1,        "Present, Responsive to therapy":3, "Present, refractory to therapy":4},
                         ],
@@ -97,10 +86,6 @@
     "noData": "No follow up schedule available for this diagnosis",
 
     "noData2": "No additional reccomendations available for this diagnosis",
-
-    "TopCard2": "Additional Reccomendations",
-
-    "TopCard3": "Follow up Schedule",
 
     "TOF": {
 
@@ -1432,5 +1417,9 @@
                               ]
       },
     },
+
+    "TopCard2": "Additional Reccomendations",
+
+    "TopCard3": "Follow up Schedule",
   }
 }

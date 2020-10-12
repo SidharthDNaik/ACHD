@@ -242,7 +242,7 @@ export default StyleSheet.create({
     borderLeftWidth: 1,
   },
   dropDownCardPanel: {
-    height: 125,
+    height: 180,
     flexDirection: "row",
     backgroundColor: '#faf2f2',
     paddingTop: 5,
@@ -290,7 +290,7 @@ export default StyleSheet.create({
   },
   QuestionPanel: {
     height: "100%",
-    width: "60%",
+    width: "55%",
     borderRightWidth: 1,
     borderColor: 'black',
     left: 3,
@@ -300,10 +300,12 @@ export default StyleSheet.create({
   },
   QuestionText: {
     fontSize: 20,
+    marginLeft: 7,
+    marginRight: 7,
   },
   AnswerPanel: {
     height: "100%",
-    width: "40%",
+    width: "45%",
     right: 3,
     alignItems: "center",
     justifyContent:'center',
@@ -334,6 +336,7 @@ export default StyleSheet.create({
   answerButtonText: {
     fontSize: 20,
     marginLeft: 5,
+    marginRight: 5,
   },
   finalButton: {
     alignItems: "center",

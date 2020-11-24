@@ -12,7 +12,7 @@ Description: This file will be imported by our screens and buttons for
 
 export default StyleSheet.create({
   titleText: {
-    top: 15,
+    top: 35,
     flex:1.2,
     fontSize: 22,
     fontWeight: 'bold',
@@ -43,16 +43,19 @@ export default StyleSheet.create({
     height: "auto",
     width: "auto",
     borderRadius: 100,
-    backgroundColor: "#757171",
+    borderWidth: 1,
     textAlign:"center",
-    paddingLeft: 15,
-    paddingRight: 15,
+    paddingLeft: 20,
+    paddingRight: 20,
     paddingTop: 15,
     paddingBottom: 15,
+    borderColor: "rgba(0,0,0,.3)",
+    backgroundColor: "#387594",
   },
   buttonTextStyle: {
     fontSize: 25,
     fontWeight: 'bold',
+    textAlign: "center",
     color: "white"
   },
   closeButton :{
@@ -140,6 +143,7 @@ export default StyleSheet.create({
   diagnosisButtonTextStyle: {
     fontSize: 25,
     fontWeight: 'bold',
+    textAlign: "center",
     color: "white"
   },
   Questionaire1: {
@@ -175,7 +179,7 @@ export default StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: '#757171',
+    backgroundColor: '#387594',
     borderColor: 'black',
     paddingTop: 10,
     paddingBottom: 10,
@@ -269,9 +273,9 @@ export default StyleSheet.create({
     height: "auto",
     width: "auto",
     alignItems: "center",
-    backgroundColor: "#a6a6a6",
-    paddingTop: 5,
-    paddingBottom: 5,
+    backgroundColor: "#4086A8",
+    paddingTop: 7,
+    paddingBottom: 7,
     borderBottomWidth: 1,
     borderColor: 'black',
   },
@@ -340,7 +344,7 @@ export default StyleSheet.create({
   },
   finalButton: {
     alignItems: "center",
-    backgroundColor: "#757171",
+    backgroundColor: "#387594",
     borderWidth: 1,
     borderRadius: 10,
   },
@@ -360,7 +364,7 @@ export default StyleSheet.create({
     width: deviceWidth,
     alignItems: "center",
     flexDirection: "column",
-    backgroundColor: "#757171",
+    backgroundColor: "#387594",
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.2)",
     paddingTop: 20,
@@ -371,7 +375,7 @@ export default StyleSheet.create({
     width: deviceWidth,
     alignItems: "center",
     flexDirection: "column",
-    backgroundColor: "#757171",
+    backgroundColor: "#387594",
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.2)",
     paddingTop: 20,
@@ -384,7 +388,7 @@ export default StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
-    backgroundColor: "#757171",
+    backgroundColor: "#387594",
     borderWidth: 1,
     borderColor: "rgba(0,0,0,0.2)",
     padding: 10,
@@ -392,6 +396,7 @@ export default StyleSheet.create({
   tableHeaderText: {
     fontSize: 15,
     fontWeight: "bold",
+    color: "white"
   },
   tableCard: {
     flex:1,

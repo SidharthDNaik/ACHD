@@ -35,7 +35,7 @@ export default class DiagnosisList extends Component {
    var pickerItemNames = appData['DiagnosisList']['pickerItemNames'];
 
    return (
-       <LinearGradient colors={['#757171', '#faf2f2']}
+       <LinearGradient colors={['#4086A8', '#4086A8']}
                        style={styles.genGradient}
                        start={{ x: 0, y: 0 }}
                        end={{ x: 1, y: 1 }}>

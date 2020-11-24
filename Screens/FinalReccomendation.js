@@ -66,7 +66,7 @@ const FinalReccomendation = (props) => {
     styleP = styles.dropDownCardFrameText5;
   }
   return(
-    <LinearGradient colors={['#757171', '#faf2f2']}
+    <LinearGradient colors={['#4086A8', '#4086A8']}
                     style={styles.genGradient}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}>

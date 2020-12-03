@@ -98,7 +98,7 @@ export default StyleSheet.create({
     margin: 0,
   },
   scrollableModal: {
-    height: 300,
+    height: 400,
   },
   scrollableModalContent1: {
     height: "auto",

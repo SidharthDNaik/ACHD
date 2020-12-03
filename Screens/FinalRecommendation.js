@@ -19,7 +19,7 @@ import CardTable from '../Components/Cards/CardTable'
 import QuestionTree from '../Components/Trees/QuestionTree'
 import ImgDisplayer from '../Components/IMGDisplayer/ImgDisplayer'
 
-const FinalReccomendation = (props) => {
+const FinalRecommendation = (props) => {
 
   const { classificationA } = props.route.params;
   const { classificationP } = props.route.params;
@@ -28,7 +28,7 @@ const FinalReccomendation = (props) => {
   var styleA = styles.dropDownCardFrameText1;
   var styleP = styles.dropDownCardFrameText1;
   var display = [];
-  var tableQuestions = appData["FinalReccomendation"][diagnosis]["TableQuestions"];
+  var tableQuestions = appData["FinalRecommendation"][diagnosis]["TableQuestions"];
   var tableAnswers;
 
   if (classificationA == 1){
@@ -41,25 +41,25 @@ const FinalReccomendation = (props) => {
     styleA = styles.dropDownCardFrameText5;
   }
   if ( classificationP == "A" ){
-    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableA"];
+    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableA"];
     display.push(
       <CardTable key={0} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
     );
     styleP = styles.dropDownCardFrameText2;
   } else if ( classificationP == "B" ){
-    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableB"];
+    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableB"];
     display.push(
       <CardTable key={1} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
     );
     styleP = styles.dropDownCardFrameText3;
   } else if ( classificationP == "C" ){
-    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableC"];
+    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableC"];
     display.push(
       <CardTable key={2} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
     );
     styleP = styles.dropDownCardFrameText4;
   } else {
-    tableAnswers = appData["FinalReccomendation"][diagnosis]["TableD"];
+    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableD"];
     display.push(
       <CardTable key={3} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
     );
@@ -76,7 +76,7 @@ const FinalReccomendation = (props) => {
 
               <View style= {{alignItems: "center", flexDirection:"column", bottom: 10}}>
                 <Text style={styles.dropDownCardFrameText}>
-                  {appData["FinalReccomendation"]["TopCard"]}
+                  {appData["FinalRecommendation"]["TopCard"]}
                 </Text>
                 <View style = {{top: 5, flexDirection:"row"}}>
                   <Text style={styles.dropDownCardFrameText}>
@@ -100,7 +100,7 @@ const FinalReccomendation = (props) => {
 
               <View style={{paddingBottom: 10}}>
                 <Text style={styles.dropDownCardFrameText}>
-                  {appData["FinalReccomendation"]["MiddleCard"]}
+                  {appData["FinalRecommendation"]["MiddleCard"]}
                 </Text>
               </View>
 
@@ -116,11 +116,11 @@ const FinalReccomendation = (props) => {
             <View style={styles.finalRecCard}>
               <View style={{paddingBottom: 9, borderBottomWidth:1, borderColor: "rgba(0,0,0,.2)"}}>
                 <Text style={styles.dropDownCardFrameText}>
-                  {appData["FinalReccomendation"]["TopCard2"]}
+                  {appData["FinalRecommendation"]["TopCard2"]}
                 </Text>
               </View>
               <ImgDisplayer
-                panelNames={appData["FinalReccomendation"][diagnosis]["AdditionalReccomendations"]["panelNames"]}
+                panelNames={appData["FinalRecommendation"][diagnosis]["AdditionalReccomendations"]["panelNames"]}
                 />
             </View>
 
@@ -130,14 +130,14 @@ const FinalReccomendation = (props) => {
             <View style={styles.finalRecCard}>
               <View style={{paddingBottom: 9, borderBottomWidth:1, borderColor: "rgba(0,0,0,.2)"}}>
                 <Text style={styles.dropDownCardFrameText}>
-                  {appData["FinalReccomendation"]["TopCard3"]}
+                  {appData["FinalRecommendation"]["TopCard3"]}
                 </Text>
               </View>
 
               <QuestionTree
-                header={appData["FinalReccomendation"][diagnosis]["header"]}
-                questions={appData["FinalReccomendation"][diagnosis]["questions"]}
-                noData={appData["FinalReccomendation"]["noData"]}
+                header={appData["FinalRecommendation"][diagnosis]["header"]}
+                questions={appData["FinalRecommendation"][diagnosis]["questions"]}
+                noData={appData["FinalRecommendation"]["noData"]}
                 />
 
             </View>
@@ -162,4 +162,4 @@ const FinalReccomendation = (props) => {
   );
 };
 
-export default FinalReccomendation;
+export default FinalRecommendation;

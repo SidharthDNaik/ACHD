@@ -160,7 +160,7 @@ export default function ImgDisplayer(props){
     display.push(<View  key={-1}
                         style={{paddingTop:10}}>
                   <Text style={styles.panelText}>
-                    {appData["FinalReccomendation"]["noData2"]}
+                    {appData["FinalRecommendation"]["noData2"]}
                   </Text>
                 </View>)
   } else {

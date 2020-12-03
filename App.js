@@ -10,7 +10,7 @@ import React from 'react';
 import Home from './Screens/Home';
 import DiagnosisList from './Screens/DiagnosisList';
 import Questionaire from './Screens/Questionaire';
-import FinalReccomendation from './Screens/FinalReccomendation';
+import FinalRecommendation from './Screens/FinalRecommendation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -50,8 +50,8 @@ export default function App() {
           component={Questionaire}
           />
         <Stack.Screen
-          name="Final Reccomendation"
-          component={FinalReccomendation}
+          name="Final Recommendation"
+          component={FinalRecommendation}
           />
 
 

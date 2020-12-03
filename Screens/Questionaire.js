@@ -62,7 +62,7 @@ const Questionaire = (props) => {
           name="View Final Diagnosis Reccomendations"
           buttonStyle={styles.finalButton}
           textStyle={styles.finalButtonText}
-          onPress={() => props.navigation.push('Final Reccomendation', {
+          onPress={() => props.navigation.push('Final Recommendation', {
               classificationA: classificationA,
               classificationP: classificationP,
               diagnosis: diagnosis,

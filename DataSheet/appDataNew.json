@@ -77,7 +77,7 @@ functionally single ventricle)":3, "Pulmonary atresia (all forms)":3, "TGA (clas
     "Prompt1": "For future follow ups your patient should be classified as the Anatomical Class above and for today's visit the Physiological Class above.",
   },
 
-  "FinalReccomendation": {
+  "FinalRecommendation": {
 
     "TopCard": "Final AP Classification",
 

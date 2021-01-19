@@ -7,10 +7,10 @@ import appData from '../../DataSheet/appData'
 
 function findImage(name){
   switch(name){
-    case "Reccomendations for TOF":
+    case "Recommendations for TOF":
       return require("../../DataSheet/Images/1.png");
       break;
-    case "Reccomendations for Valvular Pulmonary Stenosis":
+    case "Recommendations for Valvular Pulmonary Stenosis":
       return require("../../DataSheet/Images/3.png");
       break;
     case "Recommendations for Branch and Peripheral PS":
@@ -58,10 +58,10 @@ function findImage(name){
     case "Recommendations for Anomalous Pulmonary Venous Connections":
       return require("../../DataSheet/Images/33.png");
       break;
-    case "Reccomendations for TOF (Continued)":
+    case "Recommendations for TOF (Continued)":
       return require("../../DataSheet/Images/2.png");
       break;
-    case "Reccomendations for Isolated PR After Repair of Pulmonary Stenosis":
+    case "Recommendations for Isolated PR After Repair of Pulmonary Stenosis":
       return require("../../DataSheet/Images/4.png");
       break;
     case "Recommendations for Double-Chambered Right Ventricle":

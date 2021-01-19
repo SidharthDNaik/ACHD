@@ -1,5 +1,5 @@
 /*
-* Screens/NewDaignosis -> NewDaignosis Screen
+* Screens/NewDiagnosis -> NewDiagnosis Screen
 *
 * Description:
 *   This screen is intended for users who need to figure out
@@ -59,7 +59,7 @@ const Questionaire = (props) => {
     display.push(
       <View key={0} style={styles.Questionaire4}>
         <GeneralButton
-          name="View Final Diagnosis Reccomendations"
+          name="View Classification and Recommendations"
           buttonStyle={styles.finalButton}
           textStyle={styles.finalButtonText}
           onPress={() => props.navigation.push('Final Recommendation', {

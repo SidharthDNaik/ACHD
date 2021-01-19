@@ -6,22 +6,22 @@
 
     "modalText": [
                   "This is an app developed to help providers classify adults with congentital heart disease in a comprehensive way, based on anatomic A and physiologic P variables - AP Classification based on the 2018 ACC/AHA practice guidelines. Some diagnoses have suggested minimum follow-up, and management recommendations. The classification is based on the highest relevant anatomic and physiologic feature.",
-                  "Click Classify to give your patient an anatomic and physiologic class.",
-                  "Click Diagnosis With Guidelines to access specific diagnoses that have 2018 guideline based follow-up and recommendations."],
+                  "Click 'Classify patient' to give your patient an anatomic and physiologic class.",
+                  "Click 'Classification with guidelines' to access specific diagnoses that have 2018 guideline based follow-up and recommendations."],
 
-    "buttonNamesCol": ["Classify Patient", "Diagnosis with Guidelines"],
+    "buttonNamesCol": ["Classify patient", "Classification with guidelines"],
 
     "buttonNamesGen": ["Help", "Close"],
 
     "buttonOnpressRoutes": ["Questionaire" , "Diagnosis List"],
   },
   "DiagnosisList": {
-    "pickerItemNames": {"TOF":2, "PS":2, "Branch PA":2, "DCRV":2,
+    "pickerItemNames": {"ASD":2, "VSD":2, "PS":2, "TOF":2, "PDA":2, "Branch PA":2, "DCRV":2,
                            "Ebsteins":2, "RV to PA":2, "TGA_Atrial switch":3,
                            "TGA_arterial switch":3, "cc-TGA":3, "Fontan":3,
-                           "VSD":2, "ASD":2, "AVSD":2, "PDA":2, "Congenital MS":2,
+                             "AVSD":2, "Congenital MS":2,
                             "Subaortic stenosis":2, "Supravalvular AS":2, "CoA":2,
-                            "AS":2, "Eisenmenger":3},
+                            "AS":2, "Eisenmenger":3, "AAOCA":3,},
   },
   "Questionaire": {
     "Anatomic": {
@@ -85,28 +85,28 @@
     },
     "ExplainationForDiagnosisListQuestionaire": "The reason Anatomic Classifcation is hardcoded is because you selected a diagnosis from the list. Each diagnosis has its own Anatomic Classification value.",
 
-    "Prompt1": "For future follow ups your patient should be classified as the Anatomical Class above and for today's visit the Physiological Class above.",
+    "Prompt1": "Patient should be classified with Anatomical and Physiological Class above.",
   },
 
   "FinalRecommendation": {
 
     "TopCard": "Final AP Classification",
 
-    "MiddleCard": "Reccomendation",
+    "MiddleCard": "Routine Follow-up and Testing Intervals",
 
     "noData": "No follow up schedule available for this diagnosis",
 
-    "noData2": "No additional reccomendations available for this diagnosis",
+    "noData2": "No additional recommendations available for this diagnosis",
 
-    "TopCard2": "Additional Reccomendations",
+    "TopCard2": "Recommendations",
 
-    "TopCard3": "Follow up Schedule",
+    "TopCard3": "Management flow chart",
 
     "TOF": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
-        "panelNames": ["Reccomendations for TOF", "Reccomendations for TOF (Continued)"],
+        "panelNames": ["Recommendations for TOF", "Recommendations for TOF (Continued)"],
 
       },
 
@@ -180,44 +180,44 @@
                         },
                         "Evaluation by an ACHD cardiologist & advanced HF team (Class I)": "A",
                         "PR severity" : {
-                          "Mild PR": "Follow-up with ACHD cardiologist (Class 1)",
+                          "Mild PR": "Follow-up with ACHD cardiologist (Class I)",
                           "Moderate or more PR": "Symptoms",
                           "Back": "Severely decreased LV or RV systolic function"
                         },
-                        "Follow-up with ACHD cardiologist (Class 1)": "A",
+                        "Follow-up with ACHD cardiologist (Class I)": "A",
                         "Symptoms" : {
-                          "Yes":"Pulmonary valve replacement (Class 1)",
-                          "No":"Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance",
+                          "Yes":"Pulmonary valve replacement (Class I)",
+                          "No":"Any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance",
                           "Back": "PR severity"
                         },
-                        "Pulmonary valve replacement (Class 1)": "A",
-                        "Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance" : {
-                          "Yes": "Pulmonary valve replacement (Class 2a)",
+                        "Pulmonary valve replacement (Class I)": "A",
+                        "Any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance" : {
+                          "Yes": "Pulmonary valve replacement (Class IIa)",
                           "No": "Sustained tachyarrhythmias",
                           "Back": "Symptoms"
                         },
-                        "Pulmonary valve replacement (Class 2a)": "B",
+                        "Pulmonary valve replacement (Class IIa)": "B",
                         "Sustained tachyarrhythmias":{
-                          "Yes": "Pulmonary valve replacement (Class 2b)",
+                          "Yes": "Pulmonary valve replacement (Class IIb)",
                           "No": "Residual lesions requiring surgical interventions",
-                          "Back": "Does your patient have any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance"
+                          "Back": "Any 2 of the following:\n- Mild or moderate RV or LV systolic dysfunction\n- Severe RV dilation\n- RVSP due to RVOT obstruction\n- Progressive reduction in objective exercise tolerance"
                         },
-                        "Pulmonary valve replacement (Class 2b)": "C",
+                        "Pulmonary valve replacement (Class IIb)": "C",
                         "Residual lesions requiring surgical interventions": {
-                          "Yes": "Pulmonary valve replacement (Class 2b)",
-                          "No": "Follow-up with ACHD cardiologist (Class 1)",
+                          "Yes": "Pulmonary valve replacement (Class IIb)",
+                          "No": "Follow-up with ACHD cardiologist (Class I)",
                           "Back": "Sustained tachyarrhythmias"
                         },
-                        "Follow-up with ACHD cardiologist (Class 1)": "A",
+                        "Follow-up with ACHD cardiologist (Class I)": "A",
                       },
 
     },
 
     "PS": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
-        "panelNames": ["Reccomendations for Valvular Pulmonary Stenosis", "Reccomendations for Isolated PR After Repair of Pulmonary Stenosis"],
+        "panelNames": ["Recommendations for Valvular Pulmonary Stenosis", "Recommendations for Isolated PR After Repair of Pulmonary Stenosis"],
 
       },
 
@@ -269,30 +269,30 @@
 
       "questions": {
                         "Assessment of PR severity and RV size/function": {
-                          "Mild PR and RV enlargement": "Interval follow-up (Class 1)",
-                          "Moderate or greater PR and RV enlargement": "Does your patient have symptoms for moderate or greater PR and RV enlargement?",
+                          "Mild PR and RV enlargement": "Interval follow-up (Class I)",
+                          "Moderate or greater PR and RV enlargement": "Symptoms",
                           "Back": ""
                         },
-                        "Interval follow-up (Class 1)": "A",
-                        "Does your patient have symptoms for moderate or greater PR and RV enlargement?" : {
-                          "Yes":"Pulmonary valve replacement (Class 1)",
-                          "No":"Does the Imaging and CPET indicate progressive RV dilation and/or RV dysfunction and/or progressive decrease in exercise capacity?",
+                        "Interval follow-up (Class I)": "A",
+                        "Symptoms" : {
+                          "Yes":"Pulmonary valve replacement (Class I)",
+                          "No":"Imaging and CPET shows progressive RV dilation and/or progressive decrease in exercise capacity",
                           "Back": "Assessment of PR severity and RV size/function"
                         },
-                        "Pulmonary valve replacement (Class 1)": "A",
-                        "Does the Imaging and CPET indicate progressive RV dilation and/or RV dysfunction and/or progressive decrease in exercise capacity?" : {
-                          "Yes":"Pulmonary valve replacement (Class 11b)",
+                        "Pulmonary valve replacement (Class I)": "A",
+                        "Imaging and CPET shows progressive RV dilation and/or progressive decrease in exercise capacity" : {
+                          "Yes":"Pulmonary valve replacement (Class IIb)",
                           "No":"Interval follow-up with ACHD cardiologist",
-                          "Back": "Does your patient have symptoms for moderate or greater PR and RV enlargement?"
+                          "Back": "Symptoms"
                         },
-                        "Pulmonary valve replacement (Class 11b)": "C",
+                        "Pulmonary valve replacement (Class IIb)": "C",
                         "Interval follow-up with ACHD cardiologist": "A",
                       },
     },
 
     "Branch PA": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Branch and Peripheral PS"],
 
@@ -350,7 +350,7 @@
 
     "DCRV": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Double-Chambered Right Ventricle"],
 
@@ -403,7 +403,7 @@
 
     "Ebsteins": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Ebstein Anomaly", "Recommendations for Ebstein Anomaly (Continued)"],
 
@@ -476,7 +476,7 @@
 
     "RV to PA": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Right Ventricle-to-PA conduit"],
 
@@ -534,7 +534,7 @@
 
     "TGA_Atrial switch": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for d-TGA with Artial Switch"],
 
@@ -603,7 +603,7 @@
 
     "TGA_arterial switch": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for d-TGA With Arterial Switch"],
 
@@ -661,7 +661,7 @@
 
     "cc-TGA": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Congenitally Corrected Transposition of the Great Arteries"],
 
@@ -727,9 +727,9 @@
       },
     },
 
-    "Fotan": {
+    "Fontan": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Fontan Palliation of Single Ventricle Physiology", "Recommendations for Fontan Palliation of Single Ventricle Physiology (Continued)", "Recommendations for Fontan Palliation of Single Ventricle Physiology (Cont. Extended)"],
 
@@ -796,7 +796,7 @@
     },
     "VSD": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Ventricular Septal Defect"],
 
@@ -856,43 +856,43 @@
       "questions": {
                         "Shunt direction": {
                           "Left to right": "Hemodynamic assessment",
-                          "Right to left (Eisenmenger syndrome)": "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)",
+                          "Right to left (Eisenmenger syndrome)": "Confirm PAH diagnosis (often requires invasive hemodynamic assessment) (Class I)\n\n Once confirmed, treat with medications\n\n Bosentan (Class I)\n\n PDE-5 inhibitors (Class IIa) \n\n Combination therapy (Class IIa)\n\n No closure (Class III: Harm)",
                           "Back": ""
                         },
 
-                        "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)": "A",
+                        "Confirm PAH diagnosis (often requires invasive hemodynamic assessment) (Class I)\n\n Once confirmed, treat with medications\n\n Bosentan (Class I)\n\n PDE-5 inhibitors (Class IIa) \n\n Combination therapy (Class IIa)\n\n No closure (Class III: Harm)": "A",
 
                         "Hemodynamic assessment": {
-                          "LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic": "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic",
-                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP >= 50% systemic": "Consult with ACHD and PH experts (Class 1)\n\nSurgical or device closure (Class 2)",
+                          "LV enlargement Qp:Qs ≥ 1.5:1, PASP <50% systemic, and pulmonary vascular resistance < 1/3 systemic": "Significant shunt",
+                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP ≥ 50% systemic": "Consult with ACHD and PH experts (Class I)\n\nSurgical or device closure (Class II)",
                           "Back": "Shunt direction"
                         },
 
-                        "Consult with ACHD and PH experts (Class 1)\n\nSurgical or device closure (Class 2)": "A",
+                        "Consult with ACHD and PH experts (Class I)\n\nSurgical or device closure (Class II)": "A",
 
-                        "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic": {
-                          "Yes": "Surgical or device closure (Class 1)",
+                        "Significant shunt": {
+                          "Yes": "Surgical or device closure (Class I)",
                           "No": "Progressive AR due to perimembarnous or supravistal VSD",
                           "Back": "Hemodynamic assessment"
                         },
 
-                        "Surgical or device closure (Class 1)": "A",
+                        "Surgical or device closure (Class I)": "A",
 
                         "Progressive AR due to perimembarnous or supravistal VSD" : {
-                          "Yes":"Surgical or device closure (Class 2a)",
+                          "Yes":"Surgical or device closure (Class IIa)",
                           "No": "History of IE",
                           "Back": "Does your patient have LV enlargement Qp: >= 1.5:1, PASPS <50% systemic, and pulmonary vascular resistance < 1/3 systemic"
                         },
 
-                        "Surgical or device closure (Class 2a)": "B",
+                        "Surgical or device closure (Class IIa)": "B",
 
                         "History of IE" : {
-                          "Yes": "Surgical or device closure (Class 2b)",
+                          "Yes": "Surgical or device closure (Class IIb)",
                           "No": "Continued follow-up",
                           "Back": "Progressive AR due to perimembarnous or supravistal VSD"
                         },
 
-                        "Surgical or device closure (Class 2b)": "C",
+                        "Surgical or device closure (Class IIb)": "C",
 
                         "Continued follow-up": "A",
                       },
@@ -900,7 +900,7 @@
     },
     "ASD": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Atrial Septal Defect","Recommendations for Atrial Septal Defect (Continued)"],
 
@@ -960,35 +960,35 @@
       "questions": {
                         "Shunt direction": {
                           "Left to right": "Hemodynamic assessment",
-                          "Right to left (Eisenmenger syndrome)": "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)",
+                          "Right to left (Eisenmenger syndrome)": "Confirm PAH diagnosis (often requires invasive hemodynamic assessment) (Class I)\n\n Once confirmed treat with medications\n\n Bosentan (Class I)\n\n PDE-5 inhibitors (Class IIa) \n\n Combination therapy (Class IIa)\n\n No closure (Class III: Harm)",
                           "Back": ""
                         },
 
-                        "Confirm PAH diagnosis (often requring invasive hemodynamic assessment) (Class 1)\n\n Once confirmed patient can be classified as values below:\n\n Bosentan (Class 1)\n\n PDE-5 inhibitors (Class 2a) \n\n Combination therapy (Class 2a)\n\n No closure (Class 3: Harm)": "A",
+                        "Confirm PAH diagnosis (often requires invasive hemodynamic assessment) (Class I)\n\n Once confirmed treat with medications\n\n Bosentan (Class I)\n\n PDE-5 inhibitors (Class IIa) \n\n Combination therapy (Class IIa)\n\n No closure (Class III: Harm)": "A",
 
                         "Hemodynamic assessment": {
-                          "Pulmonary vascular resistance < 1/3 systemic vascular resistance, PASP < 50% systemic, right heart enlargement, AND shunt large enough to cause physiologic sequelae (e.g.,QP:QS?-1.5:1)":"Does the pulmonary vascular resistance < 1/3 systemic vascular resistance, PASP < 50% systemic, right heart enlargement, AND shunt large enough to cause physiologic sequelae (e.g.,QP:QS?-1.5:1) indicate a functional impailment",
-                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP >= 50% systemic": "Consult with ACHD and PH experts (Class 1)\n\nThis may lead to a Surgical or device closure (Class 2b)",
+                          "Pulmonary vascular resistance < 1/3 systemic vascular resistance, PASP < 50% systemic, right heart enlargement, AND shunt large enough to cause physiologic sequelae (e.g.,QP:QS ≥ 1.5:1)":"Functional Impairment",
+                          "Pulmonary vascular resistance > 1/3 systemic, AND/OR PASP ≥ 50% systemic": "Consultation with ACHD and PH experts\n\n Surgical or device closure         (Class IIb)",
                           "Back": "Shunt direction"
                         },
 
-                        "Consult with ACHD and PH experts (Class 1)\n\nThis may lead to a Surgical or device closure (Class 2b)": "C",
+                        "Consultation with ACHD and PH experts\n\n Surgical or device closure         (Class IIb)": "C",
 
-                        "Does the pulmonary vascular resistance < 1/3 systemic vascular resistance, PASP < 50% systemic, right heart enlargement, AND shunt large enough to cause physiologic sequelae (e.g.,QP:QS?-1.5:1) indicate a functional impailment": {
-                          "Yes": "Surgical or device closure (Class 1)",
-                          "No": "Surgical or device closure (Class 2a)",
+                        "Functional Impairment": {
+                          "Yes": "Surgical or device closure (Class I)",
+                          "No": "Surgical or device closure (Class IIa)",
                           "Back": "Hemodynamic assessment"
                         },
 
-                        "Surgical or device closure (Class 1)": "A",
+                        "Surgical or device closure (Class I)": "A",
 
-                        "Surgical or device closure (Class 2a)": "B",
+                        "Surgical or device closure (Class IIa)": "B",
 
                       },
     },
     "AVSD": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Atrioventricular Septal Defect","Recommendations for Atrioventricular Septal Defect (Continued)"],
 
@@ -1045,7 +1045,7 @@
     },
     "PDA": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Patent Ductus Arteriosus"],
 
@@ -1102,7 +1102,7 @@
     },
     "Congenital MS": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": [""],
 
@@ -1154,7 +1154,7 @@
     },
     "Subaortic stenosis": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Subaortic Stenosis"],
 
@@ -1206,7 +1206,7 @@
     },
     "Supravalvular AS": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Supravalvular Aortic Stenosis"],
 
@@ -1263,7 +1263,7 @@
     },
     "CoA": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Coartation of the Aorta", "Recommendations for Coarctation of the Aorta (Continued)"],
 
@@ -1320,7 +1320,7 @@
     },
     "AS": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendations": {
 
         "panelNames": ["Recommendations for Congenital Valvular Aortic Stenosis","Recommendations for Congenital Valvular Aortic Stenosis (Continued)"],
 
@@ -1367,7 +1367,7 @@
     },
     "Eisenmenger": {
 
-      "AdditionalReccomendations": {
+      "AdditionalRecommendationsdations": {
 
         "panelNames": ["Recommendations for Severe PAH","Recomendations for Severe PAH (Continued)", "Recommendations for Eisenmenger Syndrome", "Recommendations for Eisenmenger Syndrome (Continued)"],
 

@@ -1,9 +1,9 @@
 /*
-* Screens/DaignosisList -> DaignosisList Screen
+* Screens/DiagnosisList -> DiagnosisList Screen
 *
 * Description:
 *   This screen is intended for users who know their patients
-*   daignosis already and want to choose from a list of available
+*   Diagnosis already and want to choose from a list of available
 *   options.
 *
 * Parameters:
@@ -43,7 +43,7 @@ export default class DiagnosisList extends Component {
               <View style={styles.diagnosisList1}>
                 <View style={styles.diagnosisList2}>
                   <Picker
-                    defaultVal= "TOF"
+                    defaultVal= "ASD"
                     pickerStyle = {styles.pickerStyle}
                     showButton={true}
                     pickerItemNames={pickerItemNames}

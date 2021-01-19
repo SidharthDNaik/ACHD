@@ -47,7 +47,7 @@ const AnswerCard = (props) => {
             <View style={Styles.cardHeader}>
               <View style={{paddingBottom: 5, borderBottomWidth: 1, borderColor: "rgba(0,0,0,.2)"}}>
                 <Text style={Styles.cardHeaderText}>
-                  Suggestion
+                  
                 </Text>
               </View>
             </View>

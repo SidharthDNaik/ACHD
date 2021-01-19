@@ -61,5 +61,5 @@ export default function App() {
   );
 }
 
-//<Stack.Screen name="New Daignosis" component={NewDaignosisScreen} />
-//<Stack.Screen name="List of Daignosis" component={DaignosisListScreen} />
+//<Stack.Screen name="New Diagnosis" component={NewDiagnosisScreen} />
+//<Stack.Screen name="List of Diagnosis" component={DiagnosisListScreen} />

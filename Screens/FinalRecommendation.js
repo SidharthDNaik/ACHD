@@ -1,5 +1,5 @@
 /*
-* Screens/NewDaignosis -> NewDaignosis Screen
+* Screens/NewDiagnosis -> NewDiagnosis Screen
 *
 * Description:
 *   This screen is intended for users who need to figure out
@@ -120,7 +120,7 @@ const FinalRecommendation = (props) => {
                 </Text>
               </View>
               <ImgDisplayer
-                panelNames={appData["FinalRecommendation"][diagnosis]["AdditionalReccomendations"]["panelNames"]}
+                panelNames={appData["FinalRecommendation"][diagnosis]["AdditionalRecommendations"]["panelNames"]}
                 />
             </View>
 

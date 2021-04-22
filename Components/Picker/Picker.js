@@ -23,10 +23,20 @@ export default class PickerMod extends Component {
                 buttonStyle={styles.genButton}
                 textStyle={styles.diagnosisButtonTextStyle}
                 name={buttonName}
-                onPress={() => this.props.navigation.push('Questionaire', {
-                  itemId: 10,
-                  diagnosis: this.state.value
-                })}/>
+                onPress={() => {
+                  if (this.state.value != "Anomalous Origin of the Coronary"){
+                    this.props.navigation.push('Questionaire', {
+                      itemId: 10,
+                      diagnosis: this.state.value
+                    })
+                  } else {
+                    this.props.navigation.push('Final Recommendation', {
+                      itemId: 10,
+                      diagnosis: this.state.value
+                    })
+                  }
+                }
+              }/>
               </View>
             );
         } else {

@@ -25,45 +25,52 @@ const FinalRecommendation = (props) => {
   const { classificationP } = props.route.params;
   const { diagnosis } = props.route.params;
 
-  var styleA = styles.dropDownCardFrameText1;
-  var styleP = styles.dropDownCardFrameText1;
+  var no_text = ""
+  if (diagnosis == "Anomalous Origin of the Coronary"){
+    no_text = "There is no reccomendation as of now"
+  }
+
   var display = [];
   var tableQuestions = appData["FinalRecommendation"][diagnosis]["TableQuestions"];
-  var tableAnswers;
+  if (tableQuestions != "None"){
+    var styleA = styles.dropDownCardFrameText1;
+    var styleP = styles.dropDownCardFrameText1;
+    var tableAnswers;
 
-  if (classificationA == 1){
-    styleA = styles.dropDownCardFrameText2;
-  } else if (classificationA == 2){
-    styleA = styles.dropDownCardFrameText3;
-  } else if (classificationA == 3){
-    styleA = styles.dropDownCardFrameText4;
-  } else{
-    styleA = styles.dropDownCardFrameText5;
-  }
-  if ( classificationP == "A" ){
-    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableA"];
-    display.push(
-      <CardTable key={0} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
-    );
-    styleP = styles.dropDownCardFrameText2;
-  } else if ( classificationP == "B" ){
-    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableB"];
-    display.push(
-      <CardTable key={1} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
-    );
-    styleP = styles.dropDownCardFrameText3;
-  } else if ( classificationP == "C" ){
-    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableC"];
-    display.push(
-      <CardTable key={2} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
-    );
-    styleP = styles.dropDownCardFrameText4;
-  } else {
-    tableAnswers = appData["FinalRecommendation"][diagnosis]["TableD"];
-    display.push(
-      <CardTable key={3} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
-    );
-    styleP = styles.dropDownCardFrameText5;
+    if (classificationA == 1){
+      styleA = styles.dropDownCardFrameText2;
+    } else if (classificationA == 2){
+      styleA = styles.dropDownCardFrameText3;
+    } else if (classificationA == 3){
+      styleA = styles.dropDownCardFrameText4;
+    } else{
+      styleA = styles.dropDownCardFrameText5;
+    }
+    if ( classificationP == "A" ){
+      tableAnswers = appData["FinalRecommendation"][diagnosis]["TableA"];
+      display.push(
+        <CardTable key={0} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+      );
+      styleP = styles.dropDownCardFrameText2;
+    } else if ( classificationP == "B" ){
+      tableAnswers = appData["FinalRecommendation"][diagnosis]["TableB"];
+      display.push(
+        <CardTable key={1} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+      );
+      styleP = styles.dropDownCardFrameText3;
+    } else if ( classificationP == "C" ){
+      tableAnswers = appData["FinalRecommendation"][diagnosis]["TableC"];
+      display.push(
+        <CardTable key={2} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+      );
+      styleP = styles.dropDownCardFrameText4;
+    } else {
+      tableAnswers = appData["FinalRecommendation"][diagnosis]["TableD"];
+      display.push(
+        <CardTable key={3} tableQuestions={tableQuestions} tableAnswers={tableAnswers}/>
+      );
+      styleP = styles.dropDownCardFrameText5;
+    }
   }
   return(
     <LinearGradient colors={['#4086A8', '#4086A8']}
@@ -74,35 +81,38 @@ const FinalRecommendation = (props) => {
           <ScrollView>
             <View style={styles.finalRecCard0}>
 
-              <View style= {{alignItems: "center", flexDirection:"column", bottom: 10}}>
-                <Text style={styles.dropDownCardFrameText}>
-                  {appData["FinalRecommendation"]["TopCard"]}
-                </Text>
-                <View style = {{top: 5, flexDirection:"row"}}>
+              <View style={{paddingBottom: 9, borderBottomWidth:1, borderColor: "rgba(0,0,0,.2)"}}>
+                <View style= {{alignItems: "center", flexDirection:"column", bottom: 10}}>
                   <Text style={styles.dropDownCardFrameText}>
-                    {diagnosis + " "}
+                    {appData["FinalRecommendation"]["TopCard"]}
                   </Text>
-                  <View style={styleA}>
+                  <View style = {{top: 5, flexDirection:"row"}}>
                     <Text style={styles.dropDownCardFrameText}>
-                      {classificationA}
+                      {diagnosis + " "}
                     </Text>
-                  </View>
-                  <Text>
-                     {" "}
-                  </Text>
-                  <View style={styleP}>
-                    <Text style={styles.dropDownCardFrameText}>
-                      {classificationP}
+                    <View style={styleA}>
+                      <Text style={styles.dropDownCardFrameText}>
+                        {classificationA}
+                      </Text>
+                    </View>
+                    <Text>
+                       {" "}
                     </Text>
+                    <View style={styleP}>
+                      <Text style={styles.dropDownCardFrameText}>
+                        {classificationP}
+                      </Text>
+                    </View>
                   </View>
                 </View>
-              </View>
-
-              <View style={{paddingBottom: 10}}>
                 <Text style={styles.dropDownCardFrameText}>
-                  {appData["FinalRecommendation"]["MiddleCard"]}
+                    {appData["FinalRecommendation"]["MiddleCard"]}
                 </Text>
               </View>
+
+              <Text style={{color: "white", fontSize: 15, fontWeight: "bold", padding:10, textAlign:"center"}}>
+                {no_text}
+              </Text>
 
               <View style={{flexDirection: "row"}}>
                 {display}

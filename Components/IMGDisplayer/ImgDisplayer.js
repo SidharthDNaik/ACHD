@@ -106,6 +106,12 @@ function findImage(name){
     case "Recommendations for Anomalous Pulmonary Venous Connections (Continued)":
       return require("../../DataSheet/Images/32.png");
       break;
+    case "Reccomendations (1)":
+      return require("../../DataSheet/Images/34.png");
+      break;
+    case "Reccomendations (2)":
+      return require("../../DataSheet/Images/35.png");
+      break;
     default:
       return require("../../DataSheet/Images/error.png")
       break;

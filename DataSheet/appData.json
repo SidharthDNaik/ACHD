@@ -15,14 +15,16 @@
 
     "buttonOnpressRoutes": ["Questionaire" , "Diagnosis List"],
   },
+
   "DiagnosisList": {
     "pickerItemNames": {"TOF":2, "PS":2, "Branch PA":2, "DCRV":2,
                            "Ebsteins":2, "RV to PA":2, "TGA_Atrial switch":3,
                            "TGA_arterial switch":3, "cc-TGA":3, "Fontan":3,
                            "VSD":2, "ASD":2, "AVSD":2, "PDA":2, "Congenital MS":2,
                             "Subaortic stenosis":2, "Supravalvular AS":2, "CoA":2,
-                            "AS":2, "Eisenmenger":3},
+                            "AS":2, "Eisenmenger":3, "Anomalous Origin of the Coronary":0},
   },
+
   "Questionaire": {
     "Anatomic": {
 
@@ -101,6 +103,46 @@
     "TopCard2": "Additional Reccomendations",
 
     "TopCard3": "Follow up Schedule",
+
+    "Anomalous Origin of the Coronary":{
+
+      "AdditionalReccomendations": {
+
+        "panelNames": ["Reccomendations (1)", "Reccomendations (2)"],
+
+      },
+
+      "TableQuestions": "None",
+
+      "questions": {
+                        "Anomalous aortic origin of the coronary artery": {
+                          "Left coronary from the right sinus": "Ischemic symptoms or ischemia during diagnostic testing (1)",
+                          "Right coronary from the left sinus": "Ischemic symptoms or ischemia during diagnostic testing (2)",
+                          "Back": ""
+                        },
+                        "Ischemic symptoms or ischemia during diagnostic testing (1)" : {
+                          "Yes": "Surgical intervention (Class 1)",
+                          "No": "Surgical Intervention (Class 2a)",
+                          "Back": "Anomalous aortic origin of the coronary artery"
+                        },
+                        "Ischemic symptoms or ischemia during diagnostic testing (2)" : {
+                          "Yes": "Surgical intervention (Class 1)",
+                          "No": "Ventricular arrhythmias",
+                          "Back": "Anomalous aortic origin of the coronary artery"
+                        },
+                        "Ventricular arrhythmias" : {
+                          "Yes":"Surgical Intervention (Class 2a)",
+                          "No": "Surgical Intervention (Class 2b) and Continued observation (Class 2b)",
+                          "Back": "Ischemic symptoms or ischemia during diagnostic testing (2)"
+                        },
+                        "Surgical intervention (Class 1)": "A",
+                        "Surgical Intervention (Class 2a)": "B",
+                        "Surgical Intervention (Class 2b) and Continued observation (Class 2b)": "C",
+
+
+                      },
+
+    },
 
     "TOF": {
 

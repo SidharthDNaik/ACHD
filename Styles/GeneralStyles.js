@@ -189,7 +189,8 @@ export default StyleSheet.create({
   dropDownCardFrameText : {
     fontSize: 20,
     color: "white",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    textAlign: "center"
   },dropDownCardFrameText1 : {
     backgroundColor: "#bf8a86",
     height: "auto",
